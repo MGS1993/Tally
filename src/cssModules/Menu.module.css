@@ -3,6 +3,6 @@
   bottom: -20vh;
   height: 0vh;
   position: absolute;
-  transition: 0.5s ease;
+  transition: 0.5s ease-in-out;
   width: 100vw;
 }
