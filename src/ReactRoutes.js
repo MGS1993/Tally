@@ -16,7 +16,11 @@ const ReactRouter = () => {
         <Route path="/" element={<Home />} />
       </Routes>
       <NavFooter clicked={() => setMenuToggle(!menuToggle)} />
-      {menuToggle ? <Menu /> : null}
+      {menuToggle ? (
+        <Menu style={{ height: "60vh", bottom: "0vh" }} />
+      ) : (
+        <Menu />
+      )}
     </BrowserRouter>
   );
 };
