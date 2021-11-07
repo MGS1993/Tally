@@ -8,13 +8,18 @@ const Home = () => {
     otherUser: { name: "Victoria", paidFor: 172 },
   };
   return (
-    <div>
+    <div style={mainWrapper}>
       <TallyDisplay
         currentUser={users.currentUser}
         otherUser={users.otherUser}
       />
     </div>
   );
+};
+
+const mainWrapper = {
+  display: "flex",
+  flexDirection: "column",
 };
 
 export default Home;

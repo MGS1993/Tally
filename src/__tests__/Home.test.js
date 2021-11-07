@@ -1,6 +1,6 @@
 import { shallow } from "enzyme";
 
-import Home from "./Home";
+import Home from "../Pages/Home";
 import TallyDisplay from "../components/TallyDisplay";
 
 describe("HomePage rendering", () => {
@@ -12,7 +12,7 @@ describe("HomePage rendering", () => {
     expect(homeWrapper.find(TallyDisplay));
   });
 
-  it("has defined users", () => {
+  it("passes defined users to TallyDisplay", () => {
     const display = homeWrapper.find(TallyDisplay);
 
     expect(display.props().currentUser).toBeDefined();
