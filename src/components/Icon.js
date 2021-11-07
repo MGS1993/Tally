@@ -2,8 +2,8 @@ import React from "react";
 
 const Icon = ({
   size,
-  backgroundColor = "#000",
-  iconColor = "#fff",
+  backgroundColor = "white",
+  iconColor = "black",
   IconName,
 }) => {
   return (
@@ -17,7 +17,7 @@ const Icon = ({
         alignItems: "center",
       }}
     >
-      <IconName color={iconColor} size={size * 0.5} />
+      <IconName color={iconColor} size={size} />
     </div>
   );
 };

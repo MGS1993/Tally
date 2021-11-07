@@ -5,10 +5,10 @@ import { GiHamburgerMenu } from "react-icons/gi";
 
 import Icon from "./Icon";
 
-const NavFooter = () => {
+const NavFooter = ({ clicked }) => {
   return (
-    <div className={styles.mainWrapper}>
-      <Icon id="burger" IconName={GiHamburgerMenu} />
+    <div id="burger" className={styles.mainWrapper} onClick={clicked}>
+      <Icon IconName={GiHamburgerMenu} size={30} />
     </div>
   );
 };
