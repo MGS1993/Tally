@@ -1,16 +1,25 @@
-import React from "react";
+import React, { useContext } from "react";
+import styles from "../cssModules/LoginPage.module.css";
 import { useForm } from "react-hook-form";
 
-import styles from "../cssModules/LoginPage.module.css";
+import auth from "../util/auth";
+import AuthContext from "../auth/context";
 
 const LoginPage = () => {
+  const authContext = useContext(AuthContext);
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
 
-  const submitFunction = (data) => console.log(data);
+  const loginFunction = async (payload) => {
+    const { response, data } = await auth.login(payload);
+    if (response.status === 200) {
+      authContext.setUser(data.user.userName);
+      console.log("test");
+    }
+  };
 
   return (
     <div className={styles.mainWrapper}>
@@ -19,7 +28,7 @@ const LoginPage = () => {
       </div>
       <form
         className={styles.formWrapper}
-        onSubmit={handleSubmit(submitFunction)}
+        onSubmit={handleSubmit(loginFunction)}
       >
         <div className={styles.inputWrapper}>
           <label htmlFor="username">Username</label>
