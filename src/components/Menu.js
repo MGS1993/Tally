@@ -21,7 +21,7 @@ const Menu = ({ style }) => {
         <div className={styles.costInputWrapper}>
           <label htmlFor="cost">Cost</label>
           <input
-            type="text"
+            type="number"
             inputMode="numeric"
             placeholder="Cost"
             name="cost"
@@ -32,10 +32,17 @@ const Menu = ({ style }) => {
         <div className={styles.titleDateWrapper}>
           <div className={styles.titleWrapper}>
             <label htmlFor="title">Title</label>
-            <input type="text" name="title" {...register("title")} />
+            <input
+              type="text"
+              name="title"
+              placeholder="Title"
+              {...register("title")}
+            />
           </div>
           <div className={styles.dateWrapper}>
-            <label htmlFor="date">Date</label>
+            <label style={{ opacity: "1", color: "white" }} htmlFor="date">
+              Date
+            </label>
             <input
               id="date-picker"
               type="date"

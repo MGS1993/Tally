@@ -7,14 +7,28 @@
   transition: 0.5s ease-in-out;
   width: 100vw;
 }
+/* Global css*******/
 input {
   background-color: dodgerblue;
   border: none;
+  color: white;
+  font-family: "Roboto", sans-serif;
 }
+
+::placeholder {
+  color: white;
+  font-family: "Roboto", sans-serif;
+}
+
 textarea {
   background-color: dodgerblue;
   border: none;
 }
+
+label {
+  opacity: 0;
+}
+/*Global css*******/
 
 .formWrapper {
   display: flex;
@@ -36,10 +50,9 @@ textarea {
 /* actual input */
 .costInputWrapper > :nth-child(2) {
   border: 0px;
-  color: white;
   height: 32px;
   font-size: 24px;
-  padding: 0px 16px;
+  padding: 8px 16px;
 }
 
 .titleDateWrapper {
@@ -65,6 +78,7 @@ textarea {
 }
 
 .dateWrapper > :nth-child(2) {
+  color: white;
   height: 45px;
   padding: 0px 4px 0px 6px;
   width: 95%;
@@ -78,6 +92,7 @@ textarea {
 }
 
 .descriptionWrapper > :nth-child(2) {
+  color: white;
   font-size: 18px;
   padding: 12px;
 }
