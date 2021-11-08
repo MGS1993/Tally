@@ -8,7 +8,7 @@
   width: 100vw;
 }
 
-.formWrapper {
+/* .formWrapper {
   display: flex;
   flex-direction: column;
 }
@@ -18,8 +18,9 @@
   height: 90px;
   justify-content: flex-start;
   margin: 10px 0px;
-}
-.costInputWrapper > :nth-child(1) {
+} */
+/* label */
+/* .costInputWrapper > :nth-child(1) {
   align-items: center;
   color: white;
   display: flex;
@@ -27,22 +28,23 @@
   font-size: 22px;
   font-weight: bold;
   margin: 0px 8px;
-}
-
-.costInputWrapper > :nth-child(2) {
+} */
+/* actual input */
+/* .costInputWrapper > :nth-child(2) {
   font-size: 22px;
   border-radius: 2px;
   border: 0px;
-}
+} */
 
-/* .costInputWrapper > * { */
-/* align-content: center; */
-/* justify-content: center; */
-/* border: none;
+/* .dateInputWrapper {
   display: flex;
-  height: 90px;
+  justify-content: center;
+  margin: 8px 0px;
+} */
 
-  margin-top: 20px;
-  font-size: 40px;
-  width: 80vw; */
-/* } */
+/* .dateInputWrapper > :only-child {
+  border: 0px;
+  border-radius: 2px;
+  height: 40px;
+  padding: 8px;
+} */
