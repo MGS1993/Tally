@@ -19,9 +19,7 @@ const Menu = ({ style }) => {
         onSubmit={handleSubmit(submitFunction)}
       >
         <div className={styles.costInputWrapper}>
-          <div>
-            <p>USD</p>
-          </div>
+          <label htmlFor="cost">Cost</label>
           <input
             type="text"
             inputMode="numeric"
@@ -31,22 +29,31 @@ const Menu = ({ style }) => {
           />
           {errors.cost?.type === "required" && "Cost is required"}
         </div>
-        <div className={styles.dateInputWrapper}>
-          <input
-            id="date-picker"
-            type="date"
-            name="date"
-            {...register("date")}
+        <div className={styles.titleDateWrapper}>
+          <div className={styles.titleWrapper}>
+            <label htmlFor="title">Title</label>
+            <input type="text" name="title" {...register("title")} />
+          </div>
+          <div className={styles.dateWrapper}>
+            <label htmlFor="date">Date</label>
+            <input
+              id="date-picker"
+              type="date"
+              name="date"
+              {...register("date")}
+            />
+          </div>
+        </div>
+        <div className={styles.descriptionWrapper}>
+          <label htmlFor="description">Description (optional)</label>
+          <textarea
+            cols="15"
+            rows="2"
+            placeholder="Description"
+            name="description"
+            {...register("description")}
           />
         </div>
-
-        <textarea
-          cols="20"
-          rows="4"
-          placeholder="Description"
-          name="description"
-          {...register("description")}
-        />
 
         <input type="submit" />
       </form>

@@ -14,7 +14,7 @@ describe("Menu rendering", () => {
   });
 
   it("renders correct amount of inputs", () => {
-    expect(wrapper.find("input")).toHaveLength(3);
+    expect(wrapper.find("input")).toHaveLength(4);
   });
   it("renders a text field", () => {
     expect(wrapper.find("textarea")).toHaveLength(1);
