@@ -16,8 +16,10 @@ const LoginPage = () => {
   const loginFunction = async (payload) => {
     const { response, data } = await auth.login(payload);
     if (response.status === 200) {
-      authContext.setUser(data.user.userName);
-      console.log("test");
+      console.log("Successfully logged in");
+
+      localStorage.setItem("user", JSON.stringify(data));
+      authContext.setUser(data);
     }
   };
 
