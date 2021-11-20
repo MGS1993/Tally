@@ -1,22 +1,29 @@
-import React from "react";
+import React, { useContext } from "react";
 import styles from "../cssModules/Menu.module.css";
 import { useForm } from "react-hook-form";
+import AuthContext from "../auth/context";
+
+import { addExpense } from "../util/addExpense";
 
 const Menu = ({ style }) => {
+  const userContext = useContext(AuthContext);
+
+  console.log(userContext);
+
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
 
-  const submitFunction = (data) => console.log(data);
-
   return (
     <div className={styles.mainWrapper} style={style}>
       <form
         id="form"
         className={styles.formWrapper}
-        onSubmit={handleSubmit(submitFunction)}
+        onSubmit={handleSubmit((data) =>
+          addExpense(data, userContext.user._id)
+        )}
       >
         <div className={styles.costInputWrapper}>
           <label htmlFor="cost">Cost</label>
