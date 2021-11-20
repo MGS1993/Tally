@@ -1,6 +1,17 @@
-import React from "react";
+import React, { useEffect, useContext } from "react";
+
+import AuthContext from "../auth/context";
+import { getExpenses } from "../util/getExpenses";
+import useApi from "../hooks/useApi";
 
 const TallyDisplay = ({ currentUser, otherUser }) => {
+  const userContext = useContext(AuthContext);
+  // console.log("context:", userContext);
+  const { data, error, loading, request: getExpenseData } = useApi(getExpenses);
+
+  useEffect(() => {
+    getExpenseData(userContext.user._id);
+  }, []);
   return (
     <div style={mainWrapper}>
       <div style={cardLeft}>
