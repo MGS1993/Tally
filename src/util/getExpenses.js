@@ -3,7 +3,19 @@ export const getExpenses = async (userId) => {
   try {
     const response = await fetch(`api/getExpenses/${userId}`);
     const data = await response.json();
-    return data.userExpenses;
+    const {
+      userExpenses,
+      otherUserExpenses,
+      calculatedUserExpenses,
+      calculatedOtherUserExpenses,
+    } = data;
+
+    return {
+      userExpenses,
+      otherUserExpenses,
+      calculatedUserExpenses,
+      calculatedOtherUserExpenses,
+    };
   } catch (error) {
     console.log("Error in getExpense function:", error);
   }

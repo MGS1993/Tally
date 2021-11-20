@@ -4,13 +4,9 @@ import "./App.css";
 
 import AuthContext from "./auth/context";
 import LoginPage from "./Pages/LoginPage";
-// import useApi from "./hooks/useApi";
-
-// import { getExpenses } from "./util/getExpenses";
 
 function App() {
   const [user, setUser] = useState();
-  // const { data, error, loading, request: getExpenseData } = useApi(getExpenses);
 
   useEffect(() => {
     const loggedInUser = localStorage.getItem("user");
@@ -20,9 +16,6 @@ function App() {
     }
   }, []);
 
-  // useEffect(() => {
-  //   getExpenseData(user?._id);
-  // }, []);
   return (
     <AuthContext.Provider value={{ user, setUser }}>
       <div className="App">{user ? <ReactRouter /> : <LoginPage />}</div>

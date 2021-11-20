@@ -1,27 +1,29 @@
-import React, { useEffect, useContext } from "react";
+import React, { useEffect, useContext, useState } from "react";
 
 import AuthContext from "../auth/context";
 import { getExpenses } from "../util/getExpenses";
 import useApi from "../hooks/useApi";
 
-const TallyDisplay = ({ currentUser, otherUser }) => {
+const TallyDisplay = () => {
   const userContext = useContext(AuthContext);
-  // console.log("context:", userContext);
   const { data, error, loading, request: getExpenseData } = useApi(getExpenses);
 
   useEffect(() => {
     getExpenseData(userContext.user._id);
   }, []);
-  return (
+  console.log(data.calculatedUserExpenses);
+  return data !== undefined ? (
     <div style={mainWrapper}>
       <div style={cardLeft}>
         <p style={text}>CURRENT BALANCE</p>
         <div id="difference" style={totalStyle}>
-          {currentUser.paidFor - otherUser.paidFor}
+          {data.calculatedUserExpenses - data.calculatedOtherUserExpenses}
         </div>
       </div>
       <div style={cardRight}></div>
     </div>
+  ) : (
+    <div></div>
   );
 };
 

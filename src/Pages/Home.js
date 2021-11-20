@@ -9,10 +9,7 @@ const Home = () => {
   };
   return (
     <div style={mainWrapper}>
-      <TallyDisplay
-        currentUser={users.currentUser}
-        otherUser={users.otherUser}
-      />
+      <TallyDisplay />
     </div>
   );
 };
