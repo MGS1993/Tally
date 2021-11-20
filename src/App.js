@@ -7,6 +7,7 @@ import LoginPage from "./Pages/LoginPage";
 
 function App() {
   const [user, setUser] = useState();
+  const [userExpenses, setUserExpenses] = useState();
 
   useEffect(() => {
     const loggedInUser = localStorage.getItem("user");
