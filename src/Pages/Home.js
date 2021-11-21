@@ -3,10 +3,6 @@ import React from "react";
 import TallyDisplay from "../components/TallyDisplay";
 
 const Home = () => {
-  const users = {
-    currentUser: { name: "Manuel", paidFor: 309 },
-    otherUser: { name: "Victoria", paidFor: 172 },
-  };
   return (
     <div style={mainWrapper}>
       <TallyDisplay />

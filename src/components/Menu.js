@@ -8,8 +8,6 @@ import { addExpense } from "../util/addExpense";
 const Menu = ({ style }) => {
   const userContext = useContext(AuthContext);
 
-  // console.log(userContext);
-
   const {
     register,
     handleSubmit,

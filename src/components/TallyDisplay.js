@@ -1,4 +1,4 @@
-import React, { useEffect, useContext, useState } from "react";
+import React, { useEffect, useContext } from "react";
 
 import AuthContext from "../auth/context";
 import { getExpenses } from "../util/getExpenses";
@@ -14,35 +14,47 @@ const TallyDisplay = () => {
   console.log(data.calculatedUserExpenses);
   return data !== undefined ? (
     <div style={mainWrapper}>
-      <div style={cardLeft}>
-        <p style={text}>CURRENT BALANCE</p>
+      <div style={cardStyle}>
+        <p style={text}>Your Expenses</p>
+        <div id="difference" style={totalStyle}>
+          {data.calculatedUserExpenses}
+        </div>
+      </div>
+
+      <div style={cardStyle}>
+        <p style={text}>BAL</p>
         <div id="difference" style={totalStyle}>
           {data.calculatedUserExpenses - data.calculatedOtherUserExpenses}
         </div>
       </div>
-      <div style={cardRight}></div>
+
+      <div style={cardStyle}>
+        <p style={text}>Their Expenses</p>
+        <div id="difference" style={totalStyle}>
+          {data.calculatedOtherUserExpenses}
+        </div>
+      </div>
     </div>
   ) : (
     <div></div>
   );
 };
 
-const cardLeft = {
+const cardStyle = {
+  alignItems: "center",
   display: "flex",
   flexDirection: "column",
   margin: "10px",
 };
 
-const cardRight = {
-  display: "flex",
-};
-
 const mainWrapper = {
+  alignItems: "center",
   alignSelf: "center",
   borderRadius: "5px",
   boxShadow: "0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)",
   display: "flex",
   height: "100px",
+  justifyContent: "center",
   marginTop: "25px",
   padding: "10px",
   width: "80vw",
@@ -55,7 +67,7 @@ const text = {
 
 const totalStyle = {
   color: "green",
-  fontSize: "24px",
+  fontSize: "28px",
   fontWeight: "bold",
   marginTop: "10%",
 };
