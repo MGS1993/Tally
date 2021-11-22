@@ -14,14 +14,16 @@ const Menu = ({ style }) => {
     formState: { errors },
   } = useForm();
 
+  const addExpenseAndState = (data) => {
+    addExpense(data, userContext.user._id);
+  };
+
   return (
     <div className={styles.mainWrapper} style={style}>
       <form
         id="form"
         className={styles.formWrapper}
-        onSubmit={handleSubmit((data) =>
-          addExpense(data, userContext.user._id)
-        )}
+        onSubmit={handleSubmit((data) => addExpenseAndState(data))}
       >
         <div className={styles.costInputWrapper}>
           <label htmlFor="cost">Cost</label>

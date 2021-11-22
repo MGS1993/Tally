@@ -1,42 +1,28 @@
-import React, { useEffect, useContext } from "react";
+import React from "react";
 
-import AuthContext from "../auth/context";
-import { getExpenses } from "../util/getExpenses";
-import useApi from "../hooks/useApi";
-
-const TallyDisplay = () => {
-  const userContext = useContext(AuthContext);
-  const { data, error, loading, request: getExpenseData } = useApi(getExpenses);
-
-  useEffect(() => {
-    getExpenseData(userContext.user._id);
-  }, []);
-  console.log(data.calculatedUserExpenses);
-  return data !== undefined ? (
+const TallyDisplay = ({ data }) => {
+  return (
     <div style={mainWrapper}>
       <div style={cardStyle}>
         <p style={text}>Your Expenses</p>
-        <div style={totalStyle}>{data.calculatedUserExpenses}</div>
+        <div style={totalStyle}>{parseInt(data?.calculatedUserExpenses)}</div>
       </div>
 
       <div style={cardStyle}>
         <p style={text}>BAL</p>
         <div id="difference" style={totalStyle}>
-          {data.calculatedUserExpenses - data.calculatedOtherUserExpenses}
-          {console.log(
-            typeof data.calculatedUserExpenses -
-              data.calculatedOtherUserExpenses
-          )}
+          {parseInt(data?.calculatedUserExpenses) -
+            parseInt(data?.calculatedOtherUserExpenses)}
         </div>
       </div>
 
       <div style={cardStyle}>
         <p style={text}>Their Expenses</p>
-        <div style={totalStyle}>{data.calculatedOtherUserExpenses}</div>
+        <div style={totalStyle}>
+          {parseInt(data?.calculatedOtherUserExpenses)}
+        </div>
       </div>
     </div>
-  ) : (
-    <div></div>
   );
 };
 

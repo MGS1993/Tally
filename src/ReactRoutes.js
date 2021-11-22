@@ -6,14 +6,14 @@ import Home from "./Pages/Home";
 import Menu from "./components/Menu";
 import NavFooter from "./components/NavFooter";
 
-const ReactRouter = () => {
+const ReactRouter = ({ data }) => {
   const [menuToggle, setMenuToggle] = useState(false);
 
   return (
     <BrowserRouter>
       <Header />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home data={data} />} />
       </Routes>
       <NavFooter clicked={() => setMenuToggle(!menuToggle)} />
       {menuToggle ? (

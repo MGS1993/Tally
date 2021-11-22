@@ -3,11 +3,20 @@ import ReactRouter from "./ReactRoutes";
 import "./App.css";
 
 import AuthContext from "./auth/context";
+import { getExpenses } from "./util/getExpenses";
 import LoginPage from "./Pages/LoginPage";
+import useApi from "./hooks/useApi";
 
 function App() {
   const [user, setUser] = useState();
 
+  const {
+    data,
+    setData,
+    error,
+    loading,
+    request: getExpenseData,
+  } = useApi(getExpenses);
   useEffect(() => {
     const loggedInUser = localStorage.getItem("user");
     if (loggedInUser) {
@@ -16,9 +25,16 @@ function App() {
     }
   }, []);
 
+  useEffect(() => {
+    console.log("useEffect called");
+    getExpenseData(user?._id);
+  }, [user]);
+
   return (
-    <AuthContext.Provider value={{ user, setUser }}>
-      <div className="App">{user ? <ReactRouter /> : <LoginPage />}</div>
+    <AuthContext.Provider value={{ user, setUser, data, setData }}>
+      <div className="App">
+        {user ? <ReactRouter data={data} /> : <LoginPage />}
+      </div>
     </AuthContext.Provider>
   );
 }

@@ -2,10 +2,10 @@ import React from "react";
 
 import TallyDisplay from "../components/TallyDisplay";
 
-const Home = () => {
+const Home = ({ data }) => {
   return (
     <div style={mainWrapper}>
-      <TallyDisplay />
+      <TallyDisplay data={data} />
     </div>
   );
 };
