@@ -16,23 +16,23 @@ const TallyDisplay = () => {
     <div style={mainWrapper}>
       <div style={cardStyle}>
         <p style={text}>Your Expenses</p>
-        <div id="difference" style={totalStyle}>
-          {data.calculatedUserExpenses}
-        </div>
+        <div style={totalStyle}>{data.calculatedUserExpenses}</div>
       </div>
 
       <div style={cardStyle}>
         <p style={text}>BAL</p>
         <div id="difference" style={totalStyle}>
           {data.calculatedUserExpenses - data.calculatedOtherUserExpenses}
+          {console.log(
+            typeof data.calculatedUserExpenses -
+              data.calculatedOtherUserExpenses
+          )}
         </div>
       </div>
 
       <div style={cardStyle}>
         <p style={text}>Their Expenses</p>
-        <div id="difference" style={totalStyle}>
-          {data.calculatedOtherUserExpenses}
-        </div>
+        <div style={totalStyle}>{data.calculatedOtherUserExpenses}</div>
       </div>
     </div>
   ) : (

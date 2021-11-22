@@ -19,6 +19,7 @@ describe("TallyDisplay rendering", () => {
       let difference = users.currentUser.paidFor - users.otherUser.paidFor;
       return difference.toString();
     };
+    console.log(wrapper.debug());
     expect(wrapper.find("#difference").text()).toBe(stringDifference());
   });
 });
