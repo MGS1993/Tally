@@ -3,23 +3,19 @@ import { shallow } from "enzyme";
 import TallyDisplay from "../components/TallyDisplay";
 
 describe("TallyDisplay rendering", () => {
-  const users = {
-    currentUser: { name: "Manuel", paidFor: 300 },
-    otherUser: { name: "Victoria", paidFor: 172 },
+  const data = {
+    calculatedUserExpenses: 200,
+    calculatedOtherUserExpenses: 0,
   };
 
   it("renders difference of user expense data with other user ", () => {
-    const wrapper = shallow(
-      <TallyDisplay
-        currentUser={users.currentUser}
-        otherUser={users.otherUser}
-      />
-    );
+    const wrapper = shallow(<TallyDisplay data={data} />);
     const stringDifference = () => {
-      let difference = users.currentUser.paidFor - users.otherUser.paidFor;
+      let difference =
+        data.calculatedUserExpenses - data.calculatedOtherUserExpenses;
       return difference.toString();
     };
-    console.log(wrapper.debug());
+
     expect(wrapper.find("#difference").text()).toBe(stringDifference());
   });
 });

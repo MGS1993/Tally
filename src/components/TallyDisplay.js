@@ -5,22 +5,21 @@ const TallyDisplay = ({ data }) => {
     <div style={mainWrapper}>
       <div style={cardStyle}>
         <p style={text}>Your Expenses</p>
-        <div style={totalStyle}>{parseInt(data?.calculatedUserExpenses)}</div>
+        <div style={totalStyle}>{data?.calculatedUserExpenses} </div>
       </div>
 
       <div style={cardStyle}>
         <p style={text}>BAL</p>
         <div id="difference" style={totalStyle}>
-          {parseInt(data?.calculatedUserExpenses) -
-            parseInt(data?.calculatedOtherUserExpenses)}
+          {/* '|| 0' added as initial render value */}
+          {data?.calculatedUserExpenses - data?.calculatedOtherUserExpenses ||
+            0}
         </div>
       </div>
 
       <div style={cardStyle}>
         <p style={text}>Their Expenses</p>
-        <div style={totalStyle}>
-          {parseInt(data?.calculatedOtherUserExpenses)}
-        </div>
+        <div style={totalStyle}>{data?.calculatedOtherUserExpenses}</div>
       </div>
     </div>
   );

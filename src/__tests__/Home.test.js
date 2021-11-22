@@ -12,10 +12,26 @@ describe("HomePage rendering", () => {
     expect(homeWrapper.find(TallyDisplay));
   });
 
-  it("passes defined users to TallyDisplay", () => {
-    const display = homeWrapper.find(TallyDisplay);
-
-    expect(display.props().currentUser).toBeDefined();
-    expect(display.props().otherUser).toBeDefined();
-  });
+  // it("passes data to TallyDisplay", () => {
+  //   const data = {
+  //     userExpenses: [
+  //       {
+  //         _id: "619b13dc69b44f8ba06512ee",
+  //         cost: "200",
+  //         title: "Gift - LED Display jukebox",
+  //         date: "2021-11-19",
+  //         description: "Gift for my love",
+  //         owner: "6188b944996580523fa7b30f",
+  //         __v: 0,
+  //       },
+  //     ],
+  //     otherUserExpenses: "[]",
+  //     calculatedUserExpenses: 200,
+  //     calculatedOtherUserExpenses: 0,
+  //   };
+  //   const display = shallow(<TallyDisplay data={data} />);
+  //   // console.log(display.debug());
+  //   console.log(display.prop("data"));
+  //   expect(display.prop("data")).toBeDefined();
+  // });
 });

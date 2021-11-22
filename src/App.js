@@ -26,7 +26,7 @@ function App() {
   }, []);
 
   useEffect(() => {
-    console.log("useEffect called");
+    console.log("useEffect called in App.js");
     getExpenseData(user?._id);
   }, [user]);
 
