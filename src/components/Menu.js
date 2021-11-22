@@ -77,7 +77,7 @@ const Menu = ({ style }) => {
           />
         </div>
 
-        <input id="submitBtn" type="submit" />
+        <input className={styles.submitBtn} id="submitBtn" type="submit" />
       </form>
     </div>
   );

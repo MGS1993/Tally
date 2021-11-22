@@ -1,48 +1,8 @@
-.mainWrapper {
-  background-color: dodgerblue;
-  bottom: -20vh;
-  height: 0vh;
-  overflow: hidden;
-  position: fixed;
-  transition: 0.5s ease-in-out;
-  width: 100vw;
-}
-/* Global css*******/
-input {
-  background-color: dodgerblue;
-  border: none;
-  color: white;
-  font-family: "Roboto", sans-serif;
-}
-
-::placeholder {
-  color: white;
-  font-family: "Roboto", sans-serif;
-}
-
-textarea {
-  background-color: dodgerblue;
-  border: none;
-}
-
-label {
-  opacity: 0;
-}
-/*Global css*******/
-
-.formWrapper {
-  display: flex;
-  flex-direction: column;
-  padding: 10px;
-}
-
 .costInputWrapper {
   display: flex;
   flex-direction: column;
   border-bottom: 2px solid white;
 }
-
-/* label */
 .costInputWrapper > :nth-child(1) {
   padding: 0px 16px;
 }
@@ -53,24 +13,6 @@ label {
   height: 32px;
   font-size: 24px;
   padding: 8px 16px;
-}
-
-.titleDateWrapper {
-  display: flex;
-  /* padding: 10px; */
-  height: 75px;
-}
-
-.titleWrapper {
-  border-right: 2px solid white;
-  padding: 5px;
-}
-
-.titleWrapper > :nth-child(2) {
-  height: 45px;
-  padding-left: 8px;
-  font-size: 18px;
-  width: 95%;
 }
 
 .dateWrapper {
@@ -96,3 +38,61 @@ label {
   font-size: 18px;
   padding: 12px;
 }
+
+.formWrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.mainWrapper {
+  background-color: dodgerblue;
+  bottom: -20vh;
+  height: 0vh;
+  overflow: hidden;
+  position: fixed;
+  transition: 0.5s ease-in-out;
+  width: 100vw;
+}
+
+textarea {
+  background-color: dodgerblue;
+  border: none;
+}
+
+.titleDateWrapper {
+  display: flex;
+  /* padding: 10px; */
+  height: 75px;
+}
+
+.titleWrapper {
+  border-right: 2px solid white;
+  padding: 5px;
+}
+
+.titleWrapper > :nth-child(2) {
+  height: 45px;
+  padding-left: 8px;
+  font-size: 18px;
+  width: 95%;
+}
+
+/* Global css*******/
+/*TODO get rid of global css*/
+input {
+  background-color: dodgerblue;
+  border: none;
+  color: white;
+  font-family: "Roboto", sans-serif;
+}
+
+::placeholder {
+  color: white;
+  font-family: "Roboto", sans-serif;
+}
+
+label {
+  opacity: 0;
+}
+/*Global css*******/
