@@ -12,6 +12,7 @@ const Menu = ({ style }) => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm();
 
@@ -19,6 +20,7 @@ const Menu = ({ style }) => {
     await addExpense(data, userContext.user._id);
     const newExpenses = await getExpenses(userContext.user._id);
     userContext.setData(newExpenses);
+    reset();
   };
 
   return (
@@ -32,6 +34,7 @@ const Menu = ({ style }) => {
           <label htmlFor="cost">Cost</label>
           <input
             type="number"
+            id="number-input"
             inputMode="numeric"
             placeholder="Cost"
             name="cost"
@@ -44,6 +47,7 @@ const Menu = ({ style }) => {
             <label htmlFor="title">Title</label>
             <input
               type="text"
+              id="title-input"
               name="title"
               placeholder="Title"
               {...register("title")}
@@ -54,8 +58,8 @@ const Menu = ({ style }) => {
               Date
             </label>
             <input
-              id="date-picker"
               type="date"
+              id="date-picker"
               name="date"
               {...register("date")}
             />
@@ -66,13 +70,14 @@ const Menu = ({ style }) => {
           <textarea
             cols="15"
             rows="2"
+            id="textarea-input"
             placeholder="Description"
             name="description"
             {...register("description")}
           />
         </div>
 
-        <input type="submit" />
+        <input id="submitBtn" type="submit" />
       </form>
     </div>
   );
