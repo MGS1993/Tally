@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import AuthContext from "../auth/context";
 
 import { addExpense } from "../util/addExpense";
+import { getExpenses } from "../util/getExpenses";
 
 const Menu = ({ style }) => {
   const userContext = useContext(AuthContext);
@@ -14,8 +15,10 @@ const Menu = ({ style }) => {
     formState: { errors },
   } = useForm();
 
-  const addExpenseAndState = (data) => {
-    addExpense(data, userContext.user._id);
+  const addExpenseAndState = async (data) => {
+    await addExpense(data, userContext.user._id);
+    const newExpenses = await getExpenses(userContext.user._id);
+    userContext.setData(newExpenses);
   };
 
   return (

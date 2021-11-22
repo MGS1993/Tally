@@ -9,7 +9,6 @@ import useApi from "./hooks/useApi";
 
 function App() {
   const [user, setUser] = useState();
-
   const {
     data,
     setData,
@@ -17,6 +16,7 @@ function App() {
     loading,
     request: getExpenseData,
   } = useApi(getExpenses);
+
   useEffect(() => {
     const loggedInUser = localStorage.getItem("user");
     if (loggedInUser) {
