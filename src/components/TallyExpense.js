@@ -8,9 +8,9 @@ const TallyExpense = ({ cost, title, date, description }) => {
   return (
     <div className={styles.mainWrapper}>
       <div className={styles.topWrapper}>
-        <div>date</div>
-        <div>
-          <Icon IconName={BsFillCircleFill} />{" "}
+        <div className={styles.date}>November 15th</div>
+        <div className={styles.iconWrapper}>
+          <Icon IconName={BsFillCircleFill} size="15" iconColor="red" />
         </div>
       </div>
       <div className={styles.midWrapper}>
