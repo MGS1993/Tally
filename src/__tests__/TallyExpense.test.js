@@ -39,3 +39,20 @@ describe("rendering tests", () => {
     ).not.toBeLessThan(1);
   });
 });
+
+// describe("tallyExpense functionality", () => {
+//   let wrapper;
+//   const mockCallBack = jest.fn();
+
+//   beforeEach(() => {
+//     wrapper = shallow(<TallyExpense />);
+//   });
+
+//   it("runs a function whenever button is clicked", () => {
+//     const button = wrapper.find(".iconWrapper");
+//     wrapper.setProps({ onClick: mockCallBack });
+//     button.simulate("click");
+
+//     expect(mockCallBack.mock.calls.length).toEqual(1);
+//   });
+// });

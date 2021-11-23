@@ -4,12 +4,12 @@ import styles from "../cssModules/TallyExpense.module.css";
 import { BsFillCircleFill } from "react-icons/bs";
 import Icon from "./Icon";
 
-const TallyExpense = ({ cost, title, date, description }) => {
+const TallyExpense = ({ cost, title, date, description, clicked }) => {
   return (
     <div className={styles.mainWrapper}>
       <div className={styles.topWrapper}>
         <div className={styles.date}>November 15th</div>
-        <div className={styles.iconWrapper}>
+        <div className={styles.iconWrapper} onClick={() => console.log("test")}>
           <Icon IconName={BsFillCircleFill} size="15" iconColor="red" />
         </div>
       </div>
