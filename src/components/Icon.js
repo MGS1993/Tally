@@ -9,6 +9,7 @@ const Icon = ({
   return (
     <div
       style={{
+        display: "flex",
         width: size,
         height: size,
         borderRadius: parseInt(size) / 2,
