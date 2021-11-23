@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 
 import AuthContext from "../auth/context";
 import TallyDisplay from "../components/TallyDisplay";
-import TallyExpense from "../components/TallyExpense";
+import TallyList from "../components/TallyList";
 
 const Home = ({ data }) => {
   const authContext = useContext(AuthContext);
@@ -14,10 +14,8 @@ const Home = ({ data }) => {
   return (
     <div style={mainWrapper}>
       <TallyDisplay data={data} />
-      <button style={tempButton} onClick={() => logout()}>
-        test
-      </button>
-      <TallyExpense />
+      {/* <button onClick={() => logout()}>logout</button> */}
+      <TallyList data={data} />
     </div>
   );
 };

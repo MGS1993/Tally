@@ -1,7 +1,5 @@
-import { shallow, mount } from "enzyme";
+import { shallow } from "enzyme";
 
-import Home from "../Pages/Home";
-import Icon from "../components/Icon";
 import TallyExpense from "../components/TallyExpense";
 
 describe("rendering tests", () => {
@@ -9,10 +7,10 @@ describe("rendering tests", () => {
   beforeEach(() => {
     wrapper = shallow(<TallyExpense />);
   });
-  it("renders to home screen", () => {
-    const homeWrapper = shallow(<Home />);
-    expect(homeWrapper.find(TallyExpense)).toHaveLength(1);
-  });
+  // it("renders to home screen", () => {
+  //   const homeWrapper = shallow(<Home />);
+  //   expect(homeWrapper.find(TallyExpense)).toHaveLength(1);
+  // });
 
   it("has three child divs", () => {
     expect(wrapper.find(".mainWrapper").children()).toHaveLength(3);
