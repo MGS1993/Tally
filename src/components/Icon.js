@@ -1,7 +1,7 @@
 import React from "react";
 
 const Icon = ({
-  size,
+  size = "20px",
   backgroundColor = "white",
   iconColor = "black",
   IconName,
@@ -11,7 +11,7 @@ const Icon = ({
       style={{
         width: size,
         height: size,
-        borderRadius: size / 2,
+        borderRadius: parseInt(size) / 2,
         backgroundColor,
         justifyContent: "center",
         alignItems: "center",

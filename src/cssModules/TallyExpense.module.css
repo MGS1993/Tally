@@ -1,0 +1,31 @@
+.mainWrapper {
+  /*align self is temp. Will have it's on container via TallyList*/
+  align-self: center;
+  /**/
+
+  background-color: rgb(60, 114, 102);
+  display: "flex";
+  height: 100px;
+  flex-direction: column;
+  width: 90vw;
+}
+
+.topWrapper {
+  display: flex;
+  height: 30%;
+  justify-content: space-evenly;
+}
+
+.topWrapper > div {
+  flex: 1;
+}
+
+.midWrapper {
+  display: flex;
+  height: 30%;
+  justify-content: space-evenly;
+}
+
+.midWrapper > div {
+  flex: 1;
+}
