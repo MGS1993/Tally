@@ -21,7 +21,7 @@ const TallyExpense = ({ cost, title, date, description }) => {
       </div>
 
       <div className={styles.bottomWrapper}>
-        <p>Description</p>
+        <p>"Description"</p>
       </div>
     </div>
   );
