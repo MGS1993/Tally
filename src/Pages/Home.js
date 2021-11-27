@@ -16,7 +16,7 @@ const Home = ({ data }) => {
       <TallyDisplay data={data} />
       {/* <button onClick={() => logout()}>logout</button> */}
 
-      <TallyList quantity={8} />
+      <TallyList data={data} />
     </div>
   );
 };
