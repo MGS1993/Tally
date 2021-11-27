@@ -2,11 +2,12 @@ import React from "react";
 import styles from "../cssModules/TallyExpense.module.css";
 
 import { BsFillCircleFill } from "react-icons/bs";
-import { format, parseISO } from "date-fns";
+import { format } from "date-fns";
 import Icon from "./Icon";
 
 const TallyExpense = ({ cost, title, date, description, clicked }) => {
-  const parsedDate = new Date(date);
+  const parsedDate = new Date(date.replace(/-/g, "/").replace(/T.+/, ""));
+  console.log(parsedDate);
   const formattedDate = format(parsedDate, "MMMM do");
   return (
     <div className={styles.mainWrapper}>

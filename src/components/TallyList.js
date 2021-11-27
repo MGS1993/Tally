@@ -34,13 +34,14 @@ const TallyList = ({ data }) => {
 const listWrapper = {
   alignItems: "center",
   paddingTop: "20px",
+  maxHeight: "100vh",
 };
 
 const listStyle = {
   alignItems: "center",
   display: "flex",
   flexDirection: "column",
-  maxHeight: "55%",
+  maxHeight: "65%",
   overflow: "scroll",
 };
 
