@@ -20,15 +20,12 @@
 }
 
 .mainWrapper {
-  /*align self is temp. Will have it's on container via TallyList*/
-  align-self: center;
-  /**/
-
   background-color: white;
   border-radius: 6px;
-  display: "flex";
-  height: 100px;
+  display: flex;
   flex-direction: column;
+  height: 100px;
+  margin: 10px 0px;
   padding: 12px;
   width: 85vw;
 }
@@ -36,7 +33,7 @@
 .midWrapper {
   align-items: center;
   display: flex;
-  height: 30%;
+  /* height: 30%; */
   justify-content: space-evenly;
 }
 
@@ -47,6 +44,7 @@
 .topWrapper {
   align-items: center;
   display: flex;
+  margin-bottom: 10px;
   height: 30%;
   justify-content: space-evenly;
 }

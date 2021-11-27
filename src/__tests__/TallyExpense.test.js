@@ -22,6 +22,7 @@ describe("rendering tests", () => {
   });
 
   it("has a date and icon in the first and second first nested div", () => {
+    const wrapper = shallow(<TallyExpense date={"2021-11-22"} />);
     expect(wrapper.find(".topWrapper").childAt(0).text().length).not.toEqual(0);
     expect(wrapper.find(".topWrapper").childAt(1)).toHaveLength(1);
   });

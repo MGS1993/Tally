@@ -24,6 +24,7 @@ const Home = () => {
 const mainWrapper = {
   display: "flex",
   flexDirection: "column",
+  height: "100vh",
 };
 
 const tempButton = {

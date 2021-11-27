@@ -8,7 +8,7 @@ const TallyExpense = ({ cost, title, date, description, clicked }) => {
   return (
     <div className={styles.mainWrapper}>
       <div className={styles.topWrapper}>
-        <div className={styles.date}>November 15th</div>
+        <div className={styles.date}>{date}</div>
         <div className={styles.iconWrapper} onClick={() => console.log("test")}>
           <Icon IconName={BsFillCircleFill} size="15" iconColor="red" />
         </div>
@@ -17,11 +17,11 @@ const TallyExpense = ({ cost, title, date, description, clicked }) => {
         <div className={styles.title}>
           {title?.length > 1 ? title : "No Title"}
         </div>
-        <div>cost</div>
+        <div>Amount: {cost}</div>
       </div>
 
       <div className={styles.bottomWrapper}>
-        <p>"Description"</p>
+        <p>{description}</p>
       </div>
     </div>
   );

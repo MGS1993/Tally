@@ -19,27 +19,38 @@ const TallyList = ({ quantity }) => {
     data.otherUserExpenses
   );
 
-  mergedArray?.forEach((item, index) => {
-    list.push(
-      <TallyExpense
-        key={item.index}
-        cost={item.cost}
-        title={item.title}
-        date={item.date}
-        description={item.description}
-        clicked={item.clicked}
-      />
-    );
-  });
-  return <div style={listStyle}>{list}</div>;
+  if (mergedArray) {
+    for (let i = 0; i < quantity; i++) {
+      list.push(
+        <TallyExpense
+          key={i}
+          cost={mergedArray[i].cost}
+          title={mergedArray[i].title}
+          date={mergedArray[i].date}
+          description={mergedArray[i].description}
+          clicked={mergedArray[i].clicked}
+        />
+      );
+    }
+  }
+  return (
+    <div style={listWrapper}>
+      <div style={listStyle}>{list}</div>
+    </div>
+  );
+};
+
+const listWrapper = {
+  alignItems: "center",
+  paddingTop: "20px",
 };
 
 const listStyle = {
   alignItems: "center",
   display: "flex",
   flexDirection: "column",
-  justifyContent: "center",
-  paddingTop: "20px",
+  maxHeight: "45%",
+  overflow: "scroll",
 };
 
 export default TallyList;
