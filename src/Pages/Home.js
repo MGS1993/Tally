@@ -1,18 +1,11 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 
 import AuthContext from "../auth/context";
-import { getExpenses } from "../util/getExpenses";
 import TallyDisplay from "../components/TallyDisplay";
 import TallyList from "../components/TallyList";
-import useApi from "../hooks/useApi";
 
-const Home = () => {
+const Home = ({ data }) => {
   const authContext = useContext(AuthContext);
-  const { data, setData, request: getExpenseData } = useApi(getExpenses);
-
-  useEffect(() => {
-    getExpenseData(authContext?.user._id);
-  }, [data]);
 
   const logout = () => {
     localStorage.removeItem("user");

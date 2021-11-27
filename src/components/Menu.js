@@ -5,22 +5,15 @@ import AuthContext from "../auth/context";
 
 import { addExpense } from "../util/addExpense";
 import { getExpenses } from "../util/getExpenses";
-import useApi from "../hooks/useApi";
-import { useEffect } from "react/cjs/react.development";
 
-const Menu = ({ style }) => {
+const Menu = ({ setData, style }) => {
   const userContext = useContext(AuthContext);
-  const { setData, request: getExpenseData } = useApi(getExpenses);
   const {
     register,
     handleSubmit,
     reset,
     formState: { errors },
   } = useForm();
-
-  useEffect(() => {
-    getExpenseData(userContext?.user._id);
-  }, []);
 
   const addExpenseAndState = async (data) => {
     await addExpense(data, userContext.user._id);

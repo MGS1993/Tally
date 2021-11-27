@@ -3,19 +3,10 @@ import ReactRouter from "./ReactRoutes";
 import "./App.css";
 
 import AuthContext from "./auth/context";
-// import { getExpenses } from "./util/getExpenses";
 import LoginPage from "./Pages/LoginPage";
-// import useApi from "./hooks/useApi";
 
 function App() {
   const [user, setUser] = useState();
-  // const {
-  //   data,
-  //   setData,
-  //   error,
-  //   loading,
-  //   request: getExpenseData,
-  // } = useApi(getExpenses);
 
   useEffect(() => {
     const loggedInUser = localStorage.getItem("user");
@@ -25,16 +16,9 @@ function App() {
     }
   }, []);
 
-  // useEffect(() => {
-  //   console.log("useEffect called in App.js");
-  //   getExpenseData(user?._id);
-  // }, [user]);
-
   return (
     <AuthContext.Provider value={{ user, setUser /*data, setData*/ }}>
-      <div className="App">
-        {user ? <ReactRouter /*data={data}*/ /> : <LoginPage />}
-      </div>
+      <div className="App">{user ? <ReactRouter /> : <LoginPage />}</div>
     </AuthContext.Provider>
   );
 }

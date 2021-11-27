@@ -9,11 +9,12 @@ import useApi from "../hooks/useApi";
 const TallyList = ({ quantity }) => {
   let list = [];
   const authContext = useContext(AuthContext);
-  const { data, setData, request: getExpenseData } = useApi(getExpenses);
+  const { data, request: getExpenseData } = useApi(getExpenses);
 
   useEffect(() => {
     getExpenseData(authContext?.user._id);
   }, []);
+
   const mergedArray = arrayManipulation.mergeArray(
     data.userExpenses,
     data.otherUserExpenses
