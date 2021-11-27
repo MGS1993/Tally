@@ -5,7 +5,7 @@ import TallyExpense from "../components/TallyExpense";
 describe("rendering tests", () => {
   let wrapper;
   beforeEach(() => {
-    wrapper = shallow(<TallyExpense />);
+    wrapper = shallow(<TallyExpense date={new Date("11-11-21")} />);
   });
   // it("renders to home screen", () => {
   //   const homeWrapper = shallow(<Home />);
@@ -28,7 +28,9 @@ describe("rendering tests", () => {
   });
 
   it('renders "No Title" if no title was given', () => {
-    const noTitleWrapper = shallow(<TallyExpense title="" />);
+    const noTitleWrapper = shallow(
+      <TallyExpense title="" date={new Date("11-11-21")} />
+    );
     expect(noTitleWrapper.find(".title").text()).toEqual("No Title");
   });
 

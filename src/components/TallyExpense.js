@@ -2,13 +2,16 @@ import React from "react";
 import styles from "../cssModules/TallyExpense.module.css";
 
 import { BsFillCircleFill } from "react-icons/bs";
+import { format, parseISO } from "date-fns";
 import Icon from "./Icon";
 
 const TallyExpense = ({ cost, title, date, description, clicked }) => {
+  const parsedDate = new Date(date);
+  const formattedDate = format(parsedDate, "MMMM do");
   return (
     <div className={styles.mainWrapper}>
       <div className={styles.topWrapper}>
-        <div className={styles.date}>{date}</div>
+        <div className={styles.date}>{formattedDate}</div>
         <div className={styles.iconWrapper} onClick={() => console.log("test")}>
           <Icon IconName={BsFillCircleFill} size="15" iconColor="red" />
         </div>
