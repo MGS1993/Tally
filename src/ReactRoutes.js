@@ -12,7 +12,9 @@ const ReactRouter = ({ data }) => {
   return (
     <BrowserRouter>
       <Header />
-      <Routes>{<Route path="/" element={<Home data={data} />} />}</Routes>
+      <Routes>
+        <Route path="/" element={<Home data={data} />} />
+      </Routes>
       <NavFooter clicked={() => setMenuToggle(!menuToggle)} />
       {menuToggle ? (
         <Menu style={{ height: "35vh", bottom: "60px" }} />

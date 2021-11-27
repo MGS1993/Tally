@@ -11,7 +11,8 @@ describe("rendering tests", () => {
   });
 
   it("renders to Home page", () => {
-    const homeWrapper = shallow(<Home />);
+    //data is test to simulate second render which will always have props
+    const homeWrapper = shallow(<Home data={"test"} />);
     expect(homeWrapper.find(TallyList)).toHaveLength(1);
   });
 });
