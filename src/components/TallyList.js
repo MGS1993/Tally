@@ -28,6 +28,7 @@ const TallyList = ({ data, userId, setData }) => {
         title={item.title}
         date={item.date}
         description={item.description}
+        ownerName={item.ownerName}
         clicked={() => delExpenseAndUpdateState(userId, item._id)}
       />
     );

@@ -5,9 +5,17 @@ import { BsFillCircleFill } from "react-icons/bs";
 import Icon from "./Icon";
 import strManipulation from "../util/stringManipulation";
 
-const TallyExpense = ({ cost, title, date, description, clicked }) => {
+const TallyExpense = ({
+  cost,
+  title,
+  date,
+  description,
+  clicked,
+  ownerName,
+}) => {
   return (
     <div className={styles.mainWrapper}>
+      <div className={styles.ownerNameWrapper}>-{ownerName}-</div>
       <div className={styles.topWrapper}>
         <div className={styles.date}>{strManipulation.formatDate(date)}</div>
         <div className={styles.iconWrapper} onClick={clicked}>

@@ -16,7 +16,12 @@ const Home = ({ data, setData }) => {
       <TallyDisplay data={data} />
       {/* <button onClick={() => logout()}>logout</button> */}
 
-      <TallyList data={data} userId={authContext?.user._id} setData={setData} />
+      <TallyList
+        data={data}
+        userId={authContext?.user._id}
+        userName={authContext?.user.userName}
+        setData={setData}
+      />
     </div>
   );
 };

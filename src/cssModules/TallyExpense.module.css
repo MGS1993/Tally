@@ -25,7 +25,7 @@
   display: flex;
   flex: 0 0 100px;
   flex-direction: column;
-  height: 100px;
+  /* height: 100px; */
   margin: 10px 0px;
   padding: 12px;
   width: 85vw;
@@ -40,6 +40,12 @@
 
 .midWrapper > div {
   flex: 1;
+}
+
+.ownerNameWrapper {
+  color: grey;
+  margin: 5px 10px;
+  text-transform: capitalize;
 }
 
 .topWrapper {

@@ -12,8 +12,8 @@ describe("rendering tests", () => {
   //   expect(homeWrapper.find(TallyExpense)).toHaveLength(1);
   // });
 
-  it("has three child divs", () => {
-    expect(wrapper.find(".mainWrapper").children()).toHaveLength(3);
+  it("has four child divs", () => {
+    expect(wrapper.find(".mainWrapper").children()).toHaveLength(4);
   });
 
   it("renders two divs in the first two children", () => {
