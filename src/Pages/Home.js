@@ -4,7 +4,7 @@ import AuthContext from "../auth/context";
 import TallyDisplay from "../components/TallyDisplay";
 import TallyList from "../components/TallyList";
 
-const Home = ({ data }) => {
+const Home = ({ data, setData }) => {
   const authContext = useContext(AuthContext);
 
   const logout = () => {
@@ -13,10 +13,10 @@ const Home = ({ data }) => {
   };
   return (
     <div style={mainWrapper}>
-      <TallyDisplay data={data} userId={authContext?.user._id} />
+      <TallyDisplay data={data} />
       {/* <button onClick={() => logout()}>logout</button> */}
 
-      <TallyList data={data} />
+      <TallyList data={data} userId={authContext?.user._id} setData={setData} />
     </div>
   );
 };

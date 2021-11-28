@@ -1,8 +1,11 @@
 import React from "react";
+
 import arrayManipulation from "../util/arrayManipulation";
+import { deleteExpense } from "../util/deleteExpense";
+import { getExpenses } from "../util/getExpenses";
 import TallyExpense from "./TallyExpense";
 
-const TallyList = ({ data }) => {
+const TallyList = ({ data, userId, setData }) => {
   let list = [];
 
   const mergedArray = arrayManipulation.mergeArray(
@@ -10,6 +13,12 @@ const TallyList = ({ data }) => {
     data?.otherUserExpenses,
     "descending"
   );
+
+  const delExpenseAndUpdateState = async (userId, itemId) => {
+    await deleteExpense(userId, itemId);
+    const newExpenses = await getExpenses(userId);
+    setData(newExpenses);
+  };
 
   mergedArray?.forEach((item, index) => {
     list.push(
@@ -19,7 +28,7 @@ const TallyList = ({ data }) => {
         title={item.title}
         date={item.date}
         description={item.description}
-        clicked={item.clicked}
+        clicked={() => delExpenseAndUpdateState(userId, item._id)}
       />
     );
   });
