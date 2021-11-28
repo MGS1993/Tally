@@ -27,7 +27,7 @@ const ReactRouter = () => {
       </Routes>
       <NavFooter clicked={() => setMenuToggle(!menuToggle)} />
       {menuToggle ? (
-        <Menu setData={setData} style={{ height: "35vh", bottom: "60px" }} />
+        <Menu setData={setData} style={{ height: "40vh", bottom: "60px" }} />
       ) : (
         <Menu />
       )}

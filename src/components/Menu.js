@@ -35,7 +35,7 @@ const Menu = ({ setData, style }) => {
             type="number"
             id="number-input"
             inputMode="numeric"
-            placeholder="Cost"
+            placeholder="Cost (required)"
             name="cost"
             {...register("cost", { required: true })}
           />
@@ -43,7 +43,7 @@ const Menu = ({ setData, style }) => {
         </div>
         <div className={styles.titleDateWrapper}>
           <div className={styles.titleWrapper}>
-            <label htmlFor="title">Title</label>
+            <label htmlFor="title">Title </label>
             <input
               type="text"
               id="title-input"
@@ -65,7 +65,7 @@ const Menu = ({ setData, style }) => {
           </div>
         </div>
         <div className={styles.descriptionWrapper}>
-          <label htmlFor="description">Description (optional)</label>
+          <label htmlFor="description">Description</label>
           <textarea
             cols="15"
             rows="2"
@@ -76,7 +76,12 @@ const Menu = ({ setData, style }) => {
           />
         </div>
 
-        <input className={styles.submitBtn} id="submitBtn" type="submit" />
+        <input
+          className={styles.submitBtn}
+          id="submitBtn"
+          type="submit"
+          value="Submit Expense"
+        />
       </form>
     </div>
   );

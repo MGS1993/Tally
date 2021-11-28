@@ -43,14 +43,14 @@ const TallyList = ({ data, userId, setData }) => {
 const listWrapper = {
   alignItems: "center",
   paddingTop: "20px",
-  maxHeight: "100vh",
+  // maxHeight: "100vh",
 };
 
 const listStyle = {
   alignItems: "center",
   display: "flex",
   flexDirection: "column",
-  maxHeight: "65%",
+  maxHeight: "65vh",
   overflow: "scroll",
 };
 

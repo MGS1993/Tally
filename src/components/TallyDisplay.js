@@ -28,8 +28,10 @@ const TallyDisplay = ({ data }) => {
 const cardStyle = {
   alignItems: "center",
   display: "flex",
+  flex: "1",
   flexDirection: "column",
   margin: "10px",
+  textAlign: "center",
 };
 
 const mainWrapper = {

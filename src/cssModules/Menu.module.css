@@ -78,6 +78,22 @@ textarea {
   width: 95%;
 }
 
+.submitBtn {
+  align-self: center;
+  /* background-color: rgb(170, 170, 170); */
+  border: 2px solid white;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  height: 40px;
+  width: 80%;
+}
+
+.submitBtn:active {
+  color: dodgerblue;
+  background-color: white;
+}
+
 /* Global css*******/
 /*TODO get rid of global css*/
 input {
