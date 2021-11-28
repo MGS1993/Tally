@@ -10,6 +10,8 @@ export const addExpense = async (payload, userId) => {
     });
     const data = await response.json();
 
+    console.log(data);
+
     return { data, response };
   } catch (error) {
     console.log(error);

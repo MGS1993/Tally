@@ -13,7 +13,7 @@ const Home = ({ data }) => {
   };
   return (
     <div style={mainWrapper}>
-      <TallyDisplay data={data} />
+      <TallyDisplay data={data} userId={authContext?.user._id} />
       {/* <button onClick={() => logout()}>logout</button> */}
 
       <TallyList data={data} />
