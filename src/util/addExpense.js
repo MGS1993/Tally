@@ -1,7 +1,10 @@
+import settings from "../config/settings";
+const backendAddress = settings.apiUrl;
+
 export const addExpense = async (payload, userId) => {
   payload.userId = userId;
   try {
-    const response = await fetch("api/addExpense", {
+    const response = await fetch(`${backendAddress}/api/addExpense`, {
       method: "POST",
       body: JSON.stringify(payload),
       headers: {
@@ -9,8 +12,6 @@ export const addExpense = async (payload, userId) => {
       },
     });
     const data = await response.json();
-
-    console.log(data);
 
     return { data, response };
   } catch (error) {

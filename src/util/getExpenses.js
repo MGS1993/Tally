@@ -1,7 +1,10 @@
+import settings from "../config/settings";
+const backendAddress = settings.apiUrl;
+
 export const getExpenses = async (userId) => {
   if (!userId) return null;
   try {
-    const response = await fetch(`api/getExpenses/${userId}`);
+    const response = await fetch(`${backendAddress}/api/getExpenses/${userId}`);
     const data = await response.json();
     const {
       userExpenses,

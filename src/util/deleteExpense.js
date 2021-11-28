@@ -1,11 +1,17 @@
+import settings from "../config/settings";
+const backendAddress = settings.apiUrl;
+
 export const deleteExpense = async (userId, itemId) => {
   try {
-    const response = await fetch(`api/deleteExpense/${userId}/${itemId}`, {
-      method: "DELETE",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    const response = await fetch(
+      `${backendAddress}/api/deleteExpense/${userId}/${itemId}`,
+      {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
 
     const data = await response.json();
     console.log(data);
