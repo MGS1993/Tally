@@ -1,15 +1,15 @@
-import settings from "../config/settings";
-const backendAddress = settings.apiUrl;
-
 const login = async (payload) => {
   try {
-    const response = await fetch(`/api/login`, {
-      method: "POST",
-      body: JSON.stringify(payload),
-      headers: {
-        "Content-type": "application/json",
-      },
-    });
+    const response = await fetch(
+      `https://tally-back-end.herokuapp.com/api/login`,
+      {
+        method: "POST",
+        body: JSON.stringify(payload),
+        headers: {
+          "Content-type": "application/json",
+        },
+      }
+    );
 
     const data = await response.json();
 

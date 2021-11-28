@@ -1,10 +1,7 @@
-import settings from "../config/settings";
-const backendAddress = settings.apiUrl;
-
 export const deleteExpense = async (userId, itemId) => {
   try {
     const response = await fetch(
-      `${backendAddress}/api/deleteExpense/${userId}/${itemId}`,
+      `https://tally-back-end.herokuapp.com/api/deleteExpense/${userId}/${itemId}`,
       {
         method: "DELETE",
         headers: {
