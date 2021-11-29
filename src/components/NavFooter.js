@@ -7,18 +7,20 @@ import Menu from "./Menu";
 
 const NavFooter = ({ clicked, menuToggle, setData }) => {
   return (
-    <div id="burger" className={styles.mainWrapper}>
+    <>
       {menuToggle ? (
-        <Menu setData={setData} style={{ height: "310px", bottom: "60px" }} />
+        <Menu setData={setData} style={{ height: "310px", bottom: "6%" }} />
       ) : (
         <Menu />
       )}
-      <div className={styles.secondaryWrapper}>
-        <div onClick={clicked}>
-          <Icon IconName={GiHamburgerMenu} size={30} />
+      <div id="burger" className={styles.mainWrapper}>
+        <div className={styles.secondaryWrapper}>
+          <div onClick={clicked}>
+            <Icon IconName={GiHamburgerMenu} size={30} />
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
