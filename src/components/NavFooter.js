@@ -8,8 +8,10 @@ import Icon from "./Icon";
 const NavFooter = ({ clicked }) => {
   return (
     <div id="burger" className={styles.mainWrapper}>
-      <div onClick={clicked}>
-        <Icon IconName={GiHamburgerMenu} size={30} />
+      <div className={styles.secondaryWrapper}>
+        <div onClick={clicked}>
+          <Icon IconName={GiHamburgerMenu} size={30} />
+        </div>
       </div>
     </div>
   );
