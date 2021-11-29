@@ -41,7 +41,6 @@ const mainWrapper = {
   borderRadius: "5px",
   boxShadow: "0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)",
   display: "flex",
-  height: "10%",
   justifyContent: "center",
   marginTop: "25px",
   padding: "10px",

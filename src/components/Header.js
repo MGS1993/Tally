@@ -13,9 +13,9 @@ const mainWrapper = {
   backgroundColor: "dodgerblue",
   color: "white",
   display: "flex",
-  height: "6vh",
+  height: "6%",
   justifyContent: "center",
-  minHeight: "60px",
+  minHeight: "38px",
 };
 
 export default Header;

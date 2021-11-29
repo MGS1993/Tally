@@ -49,10 +49,8 @@
   background-color: dodgerblue;
   bottom: -20vh;
   height: 0vh;
-  overflow: hidden;
   position: fixed;
   transition: 0.5s ease-in-out;
-  width: 100vw;
 }
 
 textarea {

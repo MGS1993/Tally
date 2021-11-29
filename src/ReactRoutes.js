@@ -25,12 +25,11 @@ const ReactRouter = () => {
       <Routes>
         <Route path="/" element={<Home data={data} setData={setData} />} />
       </Routes>
-      <NavFooter clicked={() => setMenuToggle(!menuToggle)} />
-      {menuToggle ? (
-        <Menu setData={setData} style={{ height: "40vh", bottom: "60px" }} />
-      ) : (
-        <Menu />
-      )}
+      <NavFooter
+        clicked={() => setMenuToggle(!menuToggle)}
+        menuToggle={menuToggle}
+        setData={setData}
+      />
     </BrowserRouter>
   );
 };
