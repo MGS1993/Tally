@@ -1,9 +1,6 @@
-import settings from "../config/settings";
-const backendAddress = settings.apiUrl;
-
 const login = async (payload) => {
   try {
-    const response = await fetch(`${backendAddress}/api/login`, {
+    const response = await fetch(`/api/login`, {
       method: "POST",
       body: JSON.stringify(payload),
       headers: {

@@ -7,10 +7,10 @@ import TallyList from "../components/TallyList";
 const Home = ({ data, setData }) => {
   const authContext = useContext(AuthContext);
 
-  const logout = () => {
-    localStorage.removeItem("user");
-    authContext.setUser(null);
-  };
+  // const logout = () => {
+  //   localStorage.removeItem("user");
+  //   authContext.setUser(null);
+  // };
   return (
     <div style={mainWrapper}>
       <TallyDisplay data={data} />
@@ -32,10 +32,10 @@ const mainWrapper = {
   height: "100vh",
 };
 
-const tempButton = {
-  height: "25px",
-  width: "30vw",
-  margin: "25px",
-};
+// const tempButton = {
+//   height: "25px",
+//   width: "30vw",
+//   margin: "25px",
+// };
 
 export default Home;
