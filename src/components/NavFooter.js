@@ -9,7 +9,7 @@ const NavFooter = ({ clicked, menuToggle, setData }) => {
   return (
     <>
       {menuToggle ? (
-        <Menu setData={setData} style={{ height: "310px", bottom: "6%" }} />
+        <Menu setData={setData} style={{ height: "100%", bottom: "0%" }} />
       ) : (
         <Menu />
       )}

@@ -5,6 +5,12 @@ import AuthContext from "../auth/context";
 
 import { addExpense } from "../util/addExpense";
 import { getExpenses } from "../util/getExpenses";
+import {
+  StyledMenu,
+  FormItem,
+  FormButton,
+  StyledForm,
+} from "./styles/Menu.styled";
 
 const Menu = ({ setData, style }) => {
   const userContext = useContext(AuthContext);
@@ -23,14 +29,14 @@ const Menu = ({ setData, style }) => {
   };
 
   return (
-    <div className={styles.mainWrapper} style={style}>
-      <form
+    <StyledMenu style={style}>
+      <StyledForm
         id="form"
-        className={styles.formWrapper}
+        // className={styles.formWrapper}
         onSubmit={handleSubmit((data) => addExpenseAndState(data))}
       >
-        <div className={styles.costInputWrapper}>
-          <label htmlFor="cost">Cost</label>
+        <FormItem>
+          <div>Cost</div>
           <input
             type="number"
             id="number-input"
@@ -40,32 +46,29 @@ const Menu = ({ setData, style }) => {
             {...register("cost", { required: true })}
           />
           {errors.cost?.type === "required" && "Cost is required"}
-        </div>
-        <div className={styles.titleDateWrapper}>
-          <div className={styles.titleWrapper}>
-            <label htmlFor="title">Title </label>
-            <input
-              type="text"
-              id="title-input"
-              name="title"
-              placeholder="Title"
-              {...register("title")}
-            />
-          </div>
-          <div className={styles.dateWrapper}>
-            <label style={{ opacity: "1", color: "white" }} htmlFor="date">
-              Date
-            </label>
-            <input
-              type="date"
-              id="date-picker"
-              name="date"
-              {...register("date")}
-            />
-          </div>
-        </div>
-        <div className={styles.descriptionWrapper}>
-          <label htmlFor="description">Description</label>
+        </FormItem>
+
+        <FormItem className={styles.titleWrapper}>
+          <div>Title</div>
+          <input
+            type="text"
+            id="title-input"
+            name="title"
+            placeholder="Title"
+            {...register("title")}
+          />
+        </FormItem>
+        <FormItem className={styles.dateWrapper}>
+          <div>Date</div>
+          <input
+            type="date"
+            id="date-picker"
+            name="date"
+            {...register("date")}
+          />
+        </FormItem>
+
+        <FormItem>
           <textarea
             cols="15"
             rows="2"
@@ -74,16 +77,11 @@ const Menu = ({ setData, style }) => {
             name="description"
             {...register("description")}
           />
-        </div>
+        </FormItem>
 
-        <input
-          className={styles.submitBtn}
-          id="submitBtn"
-          type="submit"
-          value="Submit Expense"
-        />
-      </form>
-    </div>
+        <FormButton id="submitBtn" type="submit" value="Submit Expense" />
+      </StyledForm>
+    </StyledMenu>
   );
 };
 

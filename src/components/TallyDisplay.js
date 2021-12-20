@@ -9,7 +9,6 @@ const TallyDisplay = ({ data, userName }) => {
     return otherUser;
   };
 
-  console.log(nameSetFunc());
   return (
     <div style={mainWrapper}>
       <div style={cardStyle}>
