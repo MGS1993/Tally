@@ -1,15 +1,24 @@
 import React from "react";
 
-const TallyDisplay = ({ data }) => {
+const TallyDisplay = ({ data, userName }) => {
+  const nameSetFunc = () => {
+    let otherUser;
+
+    userName === "manuel" ? (otherUser = "victoria") : (otherUser = "manuel");
+
+    return otherUser;
+  };
+
+  console.log(nameSetFunc());
   return (
     <div style={mainWrapper}>
       <div style={cardStyle}>
-        <p style={text}>Your Expenses</p>
+        <p style={text}>{`${userName}'s Expenses`}</p>
         <div style={totalStyle}>{data?.calculatedUserExpenses} </div>
       </div>
 
       <div style={cardStyle}>
-        <p style={text}>BAL</p>
+        <p style={text}>What you owe</p>
         <div id="difference" style={totalStyle}>
           {/* '|| 0' added as initial render value */}
           {data?.calculatedUserExpenses - data?.calculatedOtherUserExpenses ||
@@ -18,7 +27,7 @@ const TallyDisplay = ({ data }) => {
       </div>
 
       <div style={cardStyle}>
-        <p style={text}>Their Expenses</p>
+        <p style={text}>{`${nameSetFunc()}'s Expenses`}</p>
         <div style={totalStyle}>{data?.calculatedOtherUserExpenses}</div>
       </div>
     </div>
