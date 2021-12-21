@@ -20,8 +20,11 @@ export const FormItem = styled.div`
   padding: 10px;
 
   & > div {
+    align-items: center;
     background-color: #f0f9fe;
     color: #5cb6e2;
+    display: flex;
+    justify-content: space-between;
     font-size: 28px;
     font-weight: bold;
     padding: 10px 12px;
