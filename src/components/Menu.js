@@ -73,18 +73,21 @@ const Menu = ({ setData, style }) => {
               {...register("cost", { required: true })}
             />
             {errors.cost?.type === "required" && "Cost is required"}
-            {toggled ? (
-              <Slider
-                onChange={(value) => sliderFunc(value.target.value)}
-                size="medium"
-                min={0}
-                max={100}
-                defaultValue={50}
-                aria-label="sliderPercent"
-                step={5}
-                valueLabelDisplay="auto"
-              />
-            ) : null}
+            <Slider
+              onChange={(value) => sliderFunc(value.target.value)}
+              size="medium"
+              min={0}
+              max={100}
+              defaultValue={50}
+              aria-label="sliderPercent"
+              step={5}
+              valueLabelDisplay="auto"
+              sx={{
+                height: toggled ? "8px" : "0px",
+                opacity: toggled ? "1" : "0",
+                transition: "all 0.3s linear",
+              }}
+            />
           </FormItem>
         </>
 
