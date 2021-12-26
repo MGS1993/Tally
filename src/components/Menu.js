@@ -31,15 +31,19 @@ const Menu = ({ setData, style }) => {
   const userContext = useContext(AuthContext);
   const [toggled, setToggled] = useState(false);
   const [calculatedExpense, setCalculatedExpense] = useState();
+  const [isInputEmpty, setIsInputEmpty] = useState(true);
 
   const {
     register,
     handleSubmit,
     reset,
     getValues,
-    setValue,
     formState: { errors },
   } = useForm();
+
+  const handleInputStatus = (value) => {
+    value.length <= 0 ? setIsInputEmpty(true) : setIsInputEmpty(false);
+  };
 
   const addExpenseAndState = async (data) => {
     data.cost = calculatedExpense;
@@ -47,6 +51,8 @@ const Menu = ({ setData, style }) => {
     const newExpenses = await getExpenses(userContext.user._id);
     setData(newExpenses);
     reset();
+    setCalculatedExpense(null);
+    setIsInputEmpty(true);
   };
 
   const sliderFunc = (value) => {
@@ -56,9 +62,9 @@ const Menu = ({ setData, style }) => {
   };
 
   const inputCalculator = (value) => {
+    handleInputStatus(value.target.value);
     let currentValue = parseInt(value.target.value);
     let calculatedExpense = getPercentage(currentValue, 50);
-    console.log(calculatedExpense);
     setCalculatedExpense(calculatedExpense);
   };
 
@@ -73,6 +79,7 @@ const Menu = ({ setData, style }) => {
             <TitleDiv>
               Cost
               <ToggleToken
+                disabled={isInputEmpty}
                 toggled={toggled}
                 name="Modify Split"
                 clicked={() => setToggled(!toggled)}
@@ -92,6 +99,7 @@ const Menu = ({ setData, style }) => {
             </InputWrapper>
             {errors.cost?.type === "required" && "Cost is required"}
             <Slider
+              disabled={isInputEmpty}
               onChange={(value) => sliderFunc(value.target.value)}
               size="medium"
               min={0}
