@@ -91,7 +91,7 @@ const Menu = ({ setData, style }) => {
             </InputWrapper>
             {errors.cost?.type === "required" && "Cost is required"}
             <Slider
-              disabled={isInputEmpty}
+              disabled={!toggled}
               onChange={(value) => sliderFunc(value.target.value)}
               size="medium"
               min={0}
