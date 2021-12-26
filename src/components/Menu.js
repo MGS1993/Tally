@@ -6,21 +6,31 @@ import AuthContext from "../auth/context";
 import { addExpense } from "../util/addExpense";
 import { getExpenses } from "../util/getExpenses";
 import getPercentage from "../util/getPercent";
+import InputDisplay from "./InputDisplay";
 import {
-  StyledMenu,
-  FormItem,
   FormButton,
+  FormItem,
+  InputWrapper,
   StyledForm,
+  StyledInput,
+  StyledMenu,
+  TitleDiv,
 } from "./styles/Menu.styled";
 import ToggleToken from "./ToggleToken";
 import Slider from "@mui/material/Slider";
 
 const Menu = ({ setData, style }) => {
-  /* NEXT SET BUTTON THAT ACTIVATES SPLIT COST STATE AND REVEALS SLIDER.
-  ADD PERCENT FEEDBACK FROM SLIDER AND HAVE A 'FINISHED' BUTTON THAT CLOSES SLIDER
-  AND USES SETVALUE FROM USEFORM HOOK TO SET COST BEFORE SUBMIT EXPENSES */
+  /* TYPING IN INPUT IS NOT FIRING ON CHANGE WHICH WE NEED TO USE TO UPDATE FORM DATA
+  WITHOUT HAVING TO CLICK OUT OF THE BOX WHICH ACTIVATES THE SLIDER. SIMPLY PUT WE ARE
+  RELYING ON THE SLIDER TO NOT HAVE AN UNDEFINED COST WHEN IT SHOULD BE AN ACESSORY NOT
+  A STRUCTURAL PIECE OF CODE.
+  
+  WE MIGHT NEED TO ALSO USE SETVALUE FROM THE FORM HOOK RATHER THAT MUDATING DATA MANUALLY
+  NEED MORE TESTING TO SEE IF IT'LL CAUSE ISSUES.*/
+
   const userContext = useContext(AuthContext);
   const [toggled, setToggled] = useState(false);
+  const [calculatedExpense, setCalculatedExpense] = useState();
 
   const {
     register,
@@ -32,46 +42,54 @@ const Menu = ({ setData, style }) => {
   } = useForm();
 
   const addExpenseAndState = async (data) => {
-    console.log(data);
+    data.cost = calculatedExpense;
     await addExpense(data, userContext.user._id);
     const newExpenses = await getExpenses(userContext.user._id);
     setData(newExpenses);
     reset();
   };
-  // console.log(getValues("cost"));
 
   const sliderFunc = (value) => {
-    // console.log(getValues("cost"));
     let currentValue = getValues("cost");
-    // console.log(value);
-    console.log(getPercentage(value, currentValue));
-    return getPercentage(value, currentValue);
+    let calculatedExpense = getPercentage(value, currentValue);
+    setCalculatedExpense(calculatedExpense);
   };
+
+  const inputCalculator = (value) => {
+    let currentValue = parseInt(value.target.value);
+    let calculatedExpense = getPercentage(currentValue, 50);
+    console.log(calculatedExpense);
+    setCalculatedExpense(calculatedExpense);
+  };
+
   return (
     <StyledMenu style={style}>
       <StyledForm
         id="form"
-        // className={styles.formWrapper}
         onSubmit={handleSubmit((data) => addExpenseAndState(data))}
       >
         <>
           <FormItem>
-            <div>
+            <TitleDiv>
               Cost
               <ToggleToken
                 toggled={toggled}
                 name="Modify Split"
                 clicked={() => setToggled(!toggled)}
               />
-            </div>
-            <input
-              type="number"
-              id="number-input"
-              inputMode="numeric"
-              placeholder="Cost (required)"
-              name="cost"
-              {...register("cost", { required: true })}
-            />
+            </TitleDiv>
+            <InputWrapper>
+              <StyledInput
+                type="number"
+                id="number-input"
+                inputMode="numeric"
+                placeholder="Cost (required)"
+                name="cost"
+                onInput={(value) => inputCalculator(value)}
+                {...register("cost", { required: true })}
+              />
+              <InputDisplay calculatedSplit={calculatedExpense} />
+            </InputWrapper>
             {errors.cost?.type === "required" && "Cost is required"}
             <Slider
               onChange={(value) => sliderFunc(value.target.value)}
@@ -92,8 +110,8 @@ const Menu = ({ setData, style }) => {
         </>
 
         <FormItem className={styles.titleWrapper}>
-          <div>Title</div>
-          <input
+          <TitleDiv>Title</TitleDiv>
+          <StyledInput
             type="text"
             id="title-input"
             name="title"
@@ -102,8 +120,8 @@ const Menu = ({ setData, style }) => {
           />
         </FormItem>
         <FormItem className={styles.dateWrapper}>
-          <div>Date</div>
-          <input
+          <TitleDiv>Date</TitleDiv>
+          <StyledInput
             type="date"
             id="date-picker"
             name="date"

@@ -19,26 +19,6 @@ export const FormItem = styled.div`
   flex-direction: column;
   padding: 10px;
 
-  & > div {
-    align-items: center;
-    background-color: #f0f9fe;
-    color: #5cb6e2;
-    display: flex;
-    justify-content: space-between;
-    font-size: 28px;
-    font-weight: bold;
-    padding: 10px 12px;
-    text-transform: uppercase;
-  }
-
-  & > input {
-    border: 2px solid #5cb6e2;
-    color: #38334ccc;
-    font-size: 26px;
-    margin-top: 10px;
-    padding: 8px 12px;
-  }
-
   & > textarea {
     border: 2px solid #5cb6e2;
     color: #38334ccc;
@@ -46,6 +26,14 @@ export const FormItem = styled.div`
     font-size: 18px;
     padding: 8px 12px;
   }
+`;
+
+export const StyledInput = styled.input`
+  border: 2px solid #5cb6e2;
+  color: #38334ccc;
+  font-size: 26px;
+  padding: 8px 12px;
+  width: inherit;
 `;
 
 export const FormButton = styled.input`
@@ -58,4 +46,36 @@ export const FormButton = styled.input`
   height: 40px;
   margin: 10px;
   width: 80%;
+`;
+
+export const TitleDiv = styled.div`
+  align-items: center;
+  background-color: #f0f9fe;
+  color: #5cb6e2;
+  display: flex;
+  justify-content: space-between;
+  font-size: 28px;
+  font-weight: bold;
+  padding: 10px 12px;
+  text-transform: uppercase;
+`;
+
+export const InputWrapper = styled.div`
+  display: flex;
+  position: relative;
+  width: 100%;
+`;
+
+export const StyledInputDisplay = styled.div`
+  color: #38334ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  font-size: 18px;
+  top: 0px;
+  right: 0px;
+  height: 100%;
+  padding: 8px;
+  width: 30%;
 `;

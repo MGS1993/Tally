@@ -1,8 +1,9 @@
 import styled from "styled-components";
 
-export const StyledToggleToken = styled.div`
+export const StyledToggleToken = styled.button`
   align-items: center;
   background-color: ${({ toggled }) => (toggled ? "dodgerblue" : "#bdbdbd")};
+  border: 0px;
   border-radius: 12px;
   color: white;
   display: flex;

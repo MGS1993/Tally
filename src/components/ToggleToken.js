@@ -1,10 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 
 import { StyledToggleToken } from "./styles/ToggleToken.styled";
 
-const ToggleToken = ({ clicked, name, toggled }) => {
+const ToggleToken = ({ clicked, disabled, name, toggled }) => {
   return (
-    <StyledToggleToken toggled={toggled} onClick={clicked}>
+    <StyledToggleToken
+      type="button"
+      disabled={disabled}
+      toggled={toggled}
+      onClick={clicked}
+    >
       <div>{name}</div>
     </StyledToggleToken>
   );
