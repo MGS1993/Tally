@@ -2,8 +2,11 @@ import styled from "styled-components";
 
 export const StyledMenu = styled.div`
   background-color: #fff;
-  bottom: -20vh;
+  bottom: -50vh;
+  display: flex;
+  flex-direction: column;
   height: 0vh;
+  justify-content: center;
   position: fixed;
   transition: 0.5s ease-in-out;
   width: 100%;
@@ -12,7 +15,8 @@ export const StyledMenu = styled.div`
 export const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
-  margin: 20% 0px;
+  overflow-y: scroll;
+  /* margin: 20% 0px; */
 `;
 export const FormItem = styled.div`
   display: flex;
