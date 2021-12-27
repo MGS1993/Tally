@@ -8,7 +8,6 @@ import { getExpenses } from "../util/getExpenses";
 import getPercentage from "../util/getPercent";
 import InputDisplay from "./InputDisplay";
 import {
-  FormButton,
   FormItem,
   InputWrapper,
   StyledForm,
@@ -18,6 +17,7 @@ import {
 } from "./styles/Menu.styled";
 import ToggleToken from "./ToggleToken";
 import Slider from "@mui/material/Slider";
+import { StyledButton } from "./styles/Button.styled";
 
 const Menu = ({ setData, style }) => {
   const userContext = useContext(AuthContext);
@@ -140,7 +140,9 @@ const Menu = ({ setData, style }) => {
           />
         </FormItem>
 
-        <FormButton id="submitBtn" type="submit" value="Submit Expense" />
+        <StyledButton variant="contained" type="submit">
+          Submit Expense
+        </StyledButton>
       </StyledForm>
     </StyledMenu>
   );

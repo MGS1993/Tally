@@ -40,18 +40,6 @@ export const StyledInput = styled.input`
   width: inherit;
 `;
 
-export const FormButton = styled.input`
-  align-self: center;
-  background-color: #5cb6e2;
-  border: 2px solid white;
-  border-radius: 5px;
-  color: white;
-  font-weight: bold;
-  height: 40px;
-  margin: 10px;
-  width: 80%;
-`;
-
 export const TitleDiv = styled.div`
   align-items: center;
   background-color: #f0f9fe;

@@ -4,7 +4,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import AuthContext from "./auth/context";
 import Header from "./components/Header";
 import Home from "./Pages/Home";
-import Menu from "./components/Menu";
 import NavFooter from "./components/NavFooter";
 import useApi from "./hooks/useApi";
 import { getExpenses } from "./util/getExpenses";

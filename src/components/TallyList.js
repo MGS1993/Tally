@@ -1,6 +1,6 @@
 import React from "react";
 
-import arrayManipulation from "../util/arrayManipulation";
+import { mergeArray } from "../util/arrayManipulation";
 import { deleteExpense } from "../util/deleteExpense";
 import { getExpenses } from "../util/getExpenses";
 import TallyExpense from "./TallyExpense";
@@ -8,7 +8,7 @@ import TallyExpense from "./TallyExpense";
 const TallyList = ({ data, userId, setData }) => {
   let list = [];
 
-  const mergedArray = arrayManipulation.mergeArray(
+  const mergedArray = mergeArray(
     data?.userExpenses,
     data?.otherUserExpenses,
     "descending"

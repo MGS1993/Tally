@@ -7,11 +7,7 @@ import AuthContext from "../auth/context";
 
 const LoginPage = () => {
   const authContext = useContext(AuthContext);
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
+  const { register, handleSubmit } = useForm();
 
   const loginFunction = async (payload) => {
     const { response, data } = await auth.login(payload);

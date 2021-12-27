@@ -11,6 +11,4 @@ const mergeArray = (array1, array2, sortOrder) => {
   return mergedArray;
 };
 
-export default {
-  mergeArray,
-};
+export { mergeArray };
