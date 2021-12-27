@@ -3,7 +3,7 @@ import styles from "../cssModules/TallyExpense.module.css";
 
 import { BsFillCircleFill } from "react-icons/bs";
 import Icon from "./Icon";
-import strManipulation from "../util/stringManipulation";
+import { formatDate } from "../util/stringManipulation";
 
 const TallyExpense = ({
   cost,
@@ -17,7 +17,7 @@ const TallyExpense = ({
     <div className={styles.mainWrapper}>
       <div className={styles.ownerNameWrapper}>-{ownerName}-</div>
       <div className={styles.topWrapper}>
-        <div className={styles.date}>{strManipulation.formatDate(date)}</div>
+        <div className={styles.date}>{formatDate(date)}</div>
         <div className={styles.iconWrapper} onClick={clicked}>
           <Icon IconName={BsFillCircleFill} size="15" iconColor="red" />
         </div>

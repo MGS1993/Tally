@@ -16,6 +16,4 @@ const login = async (payload) => {
   }
 };
 
-export default {
-  login,
-};
+export { login };

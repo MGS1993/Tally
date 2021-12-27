@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import styles from "../cssModules/LoginPage.module.css";
 import { useForm } from "react-hook-form";
 
-import auth from "../util/auth";
+import { login } from "../util/auth";
 import AuthContext from "../auth/context";
 
 const LoginPage = () => {
@@ -10,7 +10,7 @@ const LoginPage = () => {
   const { register, handleSubmit } = useForm();
 
   const loginFunction = async (payload) => {
-    const { response, data } = await auth.login(payload);
+    const { response, data } = await login(payload);
     if (response.status === 200) {
       console.log("Successfully logged in");
 

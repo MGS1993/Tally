@@ -16,6 +16,7 @@ const ReactRouter = () => {
 
   useEffect(() => {
     getExpenseData(userContext?.user._id);
+    // eslint-disable-next-line
   }, []);
 
   return (
