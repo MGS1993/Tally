@@ -28,6 +28,7 @@ const ReactRouter = () => {
       <NavFooter
         clicked={() => setMenuToggle(!menuToggle)}
         menuToggle={menuToggle}
+        setMenuToggle={setMenuToggle}
         setData={setData}
       />
     </BrowserRouter>

@@ -19,7 +19,7 @@ import ToggleToken from "./ToggleToken";
 import Slider from "@mui/material/Slider";
 import { StyledButton } from "./styles/Button.styled";
 
-const Menu = ({ setData, style }) => {
+const Menu = ({ setData, setMenuToggle, menuToggle, style }) => {
   const userContext = useContext(AuthContext);
   const [toggled, setToggled] = useState(false);
   const [calculatedExpense, setCalculatedExpense] = useState();
@@ -45,6 +45,7 @@ const Menu = ({ setData, style }) => {
     reset();
     setCalculatedExpense(null);
     setIsInputEmpty(true);
+    setMenuToggle(!menuToggle);
   };
 
   const sliderFunc = (value) => {

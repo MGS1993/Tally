@@ -5,11 +5,16 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import Icon from "./Icon";
 import Menu from "./Menu";
 
-const NavFooter = ({ clicked, menuToggle, setData }) => {
+const NavFooter = ({ clicked, menuToggle, setMenuToggle, setData }) => {
   return (
     <>
       {menuToggle ? (
-        <Menu setData={setData} style={{ height: "100%", bottom: "0%" }} />
+        <Menu
+          setData={setData}
+          menuToggle={menuToggle}
+          setMenuToggle={setMenuToggle}
+          style={{ height: "100%", bottom: "0%" }}
+        />
       ) : (
         <Menu />
       )}
