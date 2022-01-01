@@ -17,7 +17,7 @@ const TallyDisplay = ({ data, userName }) => {
       </div>
 
       <div style={cardStyle}>
-        <p style={text}>What you owe</p>
+        <p style={text}>Balance</p>
         <div id="difference" style={totalStyle}>
           {/* '|| 0' added as initial render value */}
           {data?.calculatedUserExpenses - data?.calculatedOtherUserExpenses ||
@@ -40,6 +40,8 @@ const cardStyle = {
   flexDirection: "column",
   margin: "10px",
   textAlign: "center",
+  height: "100%",
+  justifyContent: "center",
 };
 
 const mainWrapper = {
@@ -58,6 +60,7 @@ const mainWrapper = {
 const text = {
   color: "gray",
   fontSize: "14px",
+  minHeight: "32px",
 };
 
 const totalStyle = {
