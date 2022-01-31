@@ -15,6 +15,7 @@ export const StyledMenu = styled.div`
 export const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
+  font-family: "Roboto";
   overflow-y: scroll;
   /* margin: 20% 0px; */
 `;
