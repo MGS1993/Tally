@@ -19,12 +19,14 @@ import ToggleToken from "./ToggleToken";
 import Slider from "@mui/material/Slider";
 import { StyledButton } from "./styles/Button.styled";
 
-const Menu = ({ setData, setMenuToggle, menuToggle, style }) => {
+const Menu = ({ allUsers, setData, setMenuToggle, menuToggle, style }) => {
   const userContext = useContext(AuthContext);
   const [toggled, setToggled] = useState(false);
   const [calculatedExpense, setCalculatedExpense] = useState();
   const [isInputEmpty, setIsInputEmpty] = useState(true);
-
+  const [designatedToggle, setDesignatedToggle] = useState(false);
+  const [designation, setDesignation] = useState("");
+  const [loopClick, setLoopClick] = useState(0);
   const {
     register,
     handleSubmit,
@@ -32,6 +34,15 @@ const Menu = ({ setData, setMenuToggle, menuToggle, style }) => {
     getValues,
     formState: { errors },
   } = useForm();
+
+  const changeOwner = (e) => {
+    setDesignatedToggle(true);
+    /* used click counter to determine even or false and
+    used to loop thorough array and set designated state via clicks */
+    setLoopClick((prevState) => prevState + 1);
+    const isEven = loopClick % 2 === 0 ? 1 : 0;
+    setDesignation(allUsers[isEven]);
+  };
 
   const handleInputStatus = (value) => {
     value.length <= 0 ? setIsInputEmpty(true) : setIsInputEmpty(false);
@@ -76,6 +87,11 @@ const Menu = ({ setData, setMenuToggle, menuToggle, style }) => {
                 toggled={toggled}
                 name="Modify Split"
                 clicked={() => setToggled(!toggled)}
+              />
+              <ToggleToken
+                name={designation.userName || "Designate Expense"}
+                toggled={designatedToggle}
+                clicked={(e) => changeOwner(e)}
               />
             </TitleDiv>
             <InputWrapper>

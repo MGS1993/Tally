@@ -5,11 +5,18 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import Icon from "./Icon";
 import Menu from "./Menu";
 
-const NavFooter = ({ clicked, menuToggle, setMenuToggle, setData }) => {
+const NavFooter = ({
+  allUsers,
+  clicked,
+  menuToggle,
+  setMenuToggle,
+  setData,
+}) => {
   return (
     <>
       {menuToggle ? (
         <Menu
+          allUsers={allUsers}
           setData={setData}
           menuToggle={menuToggle}
           setMenuToggle={setMenuToggle}
