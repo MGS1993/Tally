@@ -35,7 +35,7 @@ const Menu = ({ allUsers, setData, setMenuToggle, menuToggle, style }) => {
     formState: { errors },
   } = useForm();
 
-  const changeOwner = (e) => {
+  const changeOwner = () => {
     setDesignatedToggle(true);
     /* used click counter to determine even or false and
     used to loop thorough array and set designated state via clicks */
@@ -50,10 +50,15 @@ const Menu = ({ allUsers, setData, setMenuToggle, menuToggle, style }) => {
 
   const addExpenseAndState = async (data) => {
     data.cost = calculatedExpense;
-    await addExpense(data, userContext.user._id);
+
+    designation !== ""
+      ? await addExpense(data, designation._id)
+      : await addExpense(data, userContext.user._id);
+
     const newExpenses = await getExpenses(userContext.user._id);
     setData(newExpenses);
     reset();
+    //Post reset form cleanup
     setCalculatedExpense(null);
     setIsInputEmpty(true);
     setMenuToggle(!menuToggle);
@@ -89,9 +94,9 @@ const Menu = ({ allUsers, setData, setMenuToggle, menuToggle, style }) => {
                 clicked={() => setToggled(!toggled)}
               />
               <ToggleToken
-                name={designation.userName || "Designate Expense"}
+                name={designation.userName || "Charge to other"}
                 toggled={designatedToggle}
-                clicked={(e) => changeOwner(e)}
+                clicked={() => changeOwner()}
               />
             </TitleDiv>
             <InputWrapper>
