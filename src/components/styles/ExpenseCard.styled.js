@@ -32,8 +32,9 @@ export const ExpenseAmount = styled.div`
 `;
 
 export const UserNameText = styled.div`
-  text-align: center;
   color: #808080;
+  text-align: center;
+  text-transform: capitalize;
 `;
 
 //Right Card /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
@@ -46,7 +47,7 @@ export const CardRight = styled.div`
 export const ExpenseTitle = styled.div`
   //placeholder color
   align-items: center;
-  background-color: dodgerblue;
+  background-color: ${({ theme }) => theme.colors.main};
   border-radius: 8px;
   color: white;
   display: flex;
