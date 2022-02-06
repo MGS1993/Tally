@@ -12,6 +12,7 @@ import {
 } from "./styles/ExpenseCard.styled";
 
 import { Divider } from "./styles/Divider.styled";
+import DeleteButton from "./styles/DeleteButton.styled";
 
 const ExpenseCard = ({
   cost,
@@ -35,7 +36,10 @@ const ExpenseCard = ({
       </CardLeft>
       <Divider />
       <CardRight>
-        <ExpenseTitle>{title?.length > 1 ? title : "No Title"}</ExpenseTitle>
+        <ExpenseTitle>
+          <div>{<DeleteButton onClick={clicked} />}</div>
+          <div>{title?.length > 1 ? title : "No Title"}</div>
+        </ExpenseTitle>
 
         <SummaryDiv>
           {description?.length > 1 ? description : "No description provided"}

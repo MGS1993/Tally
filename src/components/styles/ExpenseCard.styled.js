@@ -45,11 +45,32 @@ export const CardRight = styled.div`
 
 export const ExpenseTitle = styled.div`
   //placeholder color
+  align-items: center;
   background-color: dodgerblue;
   border-radius: 8px;
   color: white;
+  display: flex;
   font-size: 1.4rem;
+  height: 40px;
+  justify-content: center;
+  position: relative;
   text-align: center;
+
+  & > :first-child {
+    //targets delete button div
+    position: absolute;
+    height: 22px;
+    width: 22px;
+    left: 5px;
+  }
+
+  & > :nth-child(2) {
+    display: block;
+    max-width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
 `;
 
 export const MiscItem = styled.div`

@@ -2,7 +2,7 @@ import React from "react";
 import styles from "../cssModules/TallyExpense.module.css";
 
 import { formatDate } from "../util/stringManipulation";
-import DeleteButton from "./styles/DeleteButton.styled";
+// import DeleteButton from "./styles/DeleteButton.styled";
 import ExpenseCard from "./ExpenseCard";
 
 const TallyExpense = ({
@@ -21,7 +21,7 @@ const TallyExpense = ({
         <div className={styles.ownerNameWrapper}>-{ownerName}-</div>
         <div className={styles.topWrapper}>
           <div className={styles.date}>{formatDate(date)}</div>
-          <DeleteButton onClick={clicked} />
+          {/* <DeleteButton onClick={clicked} /> */}
         </div>
         <div className={styles.midWrapper}>
           <div className={styles.title}>
