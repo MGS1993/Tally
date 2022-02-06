@@ -8,6 +8,9 @@ import {
   CardRight,
   ExpenseWrapper,
   UserNameText,
+  ExpenseAmount,
+  SummaryDiv,
+  MiscInfo,
 } from "./styles/ExpenseCard.styled";
 
 import { Divider } from "./styles/Divider.styled";
@@ -27,20 +30,23 @@ const TallyExpense = ({
           <UserNameText>
             <p>-Manuel-</p>
           </UserNameText>
-          <div>
+          <ExpenseAmount>
             <p>$50</p>
-          </div>
+          </ExpenseAmount>
         </CardLeft>
         <Divider />
         <CardRight>
-          <div>
+          <SummaryDiv>
+            <p>
+              Car ride to and from multiple bars in houston. thanks! testing for
+              other things such as very long summaries
+            </p>
+          </SummaryDiv>
+          <MiscInfo>
             <div>January 28th</div>
-            <div>Summary</div>
-          </div>
-          <div>
             <div>split by: 50%</div>
             <div>Total: $75</div>
-          </div>
+          </MiscInfo>
         </CardRight>
       </ExpenseWrapper>
       <div className={styles.mainWrapper}>
