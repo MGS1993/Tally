@@ -3,7 +3,6 @@ import React from "react";
 import { mergeArray } from "../util/arrayManipulation";
 import { deleteExpense } from "../util/deleteExpense";
 import { getExpenses } from "../util/getExpenses";
-import TallyExpense from "./TallyExpense";
 import ExpenseCard from "./ExpenseCard";
 
 const TallyList = ({ data, userId, setData }) => {
