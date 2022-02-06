@@ -6,6 +6,7 @@ import DeleteButton from "./styles/DeleteButton.styled";
 import {
   CardLeft,
   CardRight,
+  MiscItem,
   ExpenseWrapper,
   UserNameText,
   ExpenseAmount,
@@ -43,9 +44,21 @@ const TallyExpense = ({
             </p>
           </SummaryDiv>
           <MiscInfo>
-            <div>January 28th</div>
-            <div>split by: 50%</div>
-            <div>Total: $75</div>
+            <MiscItem>
+              <div>Date</div>
+              <div>May 1st</div>
+            </MiscItem>
+            <Divider />
+            <MiscItem>
+              <div>split by</div>
+              <div>50%</div>
+            </MiscItem>
+            <Divider />
+
+            <MiscItem>
+              <div>Total</div>
+              <div>$75</div>
+            </MiscItem>
           </MiscInfo>
         </CardRight>
       </ExpenseWrapper>

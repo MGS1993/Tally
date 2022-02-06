@@ -45,20 +45,28 @@ export const CardRight = styled.div`
   flex-direction: column;
 `;
 
-export const SummaryDiv = styled.div`
-  color: #6e6e6e;
-  flex-basis: 60%;
-  min-height: 90px;
-  padding: 8px 4px;
+export const MiscItem = styled.div`
+  & > :first-child {
+    /* grey is color placeholder */
+    color: grey;
+  }
 `;
 
 export const MiscInfo = styled.div`
   display: flex;
   flex-basis: 40%;
+  justify-content: space-evenly;
 
   & > div {
     align-items: center;
     display: flex;
+    flex-direction: column;
     justify-content: center;
   }
+`;
+
+export const SummaryDiv = styled.div`
+  color: #6e6e6e;
+  flex-basis: 60%;
+  padding: 8px 4px;
 `;
