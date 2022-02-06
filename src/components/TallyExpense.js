@@ -12,6 +12,7 @@ const TallyExpense = ({
   description,
   clicked,
   ownerName,
+  splitValue,
 }) => {
   return (
     <>

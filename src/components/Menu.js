@@ -23,6 +23,8 @@ const Menu = ({ allUsers, setData, setMenuToggle, menuToggle, style }) => {
   const userContext = useContext(AuthContext);
   const [toggled, setToggled] = useState(false);
   const [calculatedExpense, setCalculatedExpense] = useState();
+  const [initialCost, setInitialCost] = useState("");
+  const [splitValue, setSplitValue] = useState(50);
   const [isInputEmpty, setIsInputEmpty] = useState(true);
   const [designatedToggle, setDesignatedToggle] = useState(false);
   const [designation, setDesignation] = useState("");
@@ -50,7 +52,9 @@ const Menu = ({ allUsers, setData, setMenuToggle, menuToggle, style }) => {
 
   const addExpenseAndState = async (data) => {
     data.cost = calculatedExpense;
-
+    data.splitValue = splitValue;
+    data.initialCost = initialCost;
+    console.log(data);
     designation !== ""
       ? await addExpense(data, designation._id)
       : await addExpense(data, userContext.user._id);
@@ -59,15 +63,18 @@ const Menu = ({ allUsers, setData, setMenuToggle, menuToggle, style }) => {
     setData(newExpenses);
     reset();
     //Post reset form cleanup
+    setSplitValue(50);
     setCalculatedExpense(null);
     setIsInputEmpty(true);
     setMenuToggle(!menuToggle);
+    setInitialCost("");
   };
 
   const sliderFunc = (value) => {
     let currentValue = getValues("cost");
     let calculatedExpense = getPercentage(value, currentValue);
     setCalculatedExpense(calculatedExpense);
+    setSplitValue(value);
   };
 
   const inputCalculator = (value) => {
@@ -75,6 +82,7 @@ const Menu = ({ allUsers, setData, setMenuToggle, menuToggle, style }) => {
     let currentValue = parseInt(value.target.value);
     let calculatedExpense = getPercentage(currentValue, 50);
     setCalculatedExpense(calculatedExpense);
+    setInitialCost(value.target.value);
   };
 
   return (

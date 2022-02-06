@@ -1,3 +1,4 @@
+import { formatDate } from "../util/stringManipulation";
 import {
   CardLeft,
   CardRight,
@@ -19,6 +20,8 @@ const ExpenseCard = ({
   description,
   clicked,
   ownerName,
+  splitValue,
+  initialCost,
 }) => {
   return (
     <ExpenseWrapper>
@@ -32,28 +35,27 @@ const ExpenseCard = ({
       </CardLeft>
       <Divider />
       <CardRight>
-        <ExpenseTitle>{title}</ExpenseTitle>
+        <ExpenseTitle>{title?.length > 1 ? title : "No Title"}</ExpenseTitle>
 
         <SummaryDiv>
-          <p>{description}</p>
+          {description?.length > 1 ? description : "No description provided"}
         </SummaryDiv>
         <MiscInfo>
           <MiscItem>
             <div>Date</div>
-            <div>{/*formatDate(date)*/}</div>
+            <div>{formatDate(date)}</div>
           </MiscItem>
           <Divider />
           <MiscItem>
-            {/* split by */}
             <div>split by</div>
-            <div>50%</div>
+            <div>{splitValue}%</div>
           </MiscItem>
           <Divider />
 
           <MiscItem>
             <div>Total</div>
             {/* initial cost */}
-            <div>$75</div>
+            <div>${initialCost}</div>
           </MiscItem>
         </MiscInfo>
       </CardRight>

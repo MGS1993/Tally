@@ -4,6 +4,7 @@ import { mergeArray } from "../util/arrayManipulation";
 import { deleteExpense } from "../util/deleteExpense";
 import { getExpenses } from "../util/getExpenses";
 import TallyExpense from "./TallyExpense";
+import ExpenseCard from "./ExpenseCard";
 
 const TallyList = ({ data, userId, setData }) => {
   let list = [];
@@ -22,13 +23,15 @@ const TallyList = ({ data, userId, setData }) => {
 
   mergedArray?.forEach((item, index) => {
     list.push(
-      <TallyExpense
+      <ExpenseCard
         key={index}
         cost={item.cost}
         title={item.title}
         date={item.date}
         description={item.description}
         ownerName={item.ownerName}
+        splitValue={item.splitValue}
+        initialCost={item.initialCost}
         clicked={() => delExpenseAndUpdateState(userId, item._id)}
       />
     );

@@ -75,5 +75,7 @@ export const MiscInfo = styled.div`
 export const SummaryDiv = styled.div`
   color: #6e6e6e;
   flex-basis: 60%;
+  min-height: 65px;
   padding: 8px 4px;
+  overflow: scroll;
 `;
