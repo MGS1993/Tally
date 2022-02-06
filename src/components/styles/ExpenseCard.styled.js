@@ -36,13 +36,20 @@ export const UserNameText = styled.div`
   color: #808080;
 `;
 
-// export const ExpenseContribution
-
 //Right Card /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
 export const CardRight = styled.div`
   display: flex;
   flex-basis: 70%;
   flex-direction: column;
+`;
+
+export const ExpenseTitle = styled.div`
+  //placeholder color
+  background-color: dodgerblue;
+  border-radius: 8px;
+  color: white;
+  font-size: 1.4rem;
+  text-align: center;
 `;
 
 export const MiscItem = styled.div`

@@ -1,42 +1,50 @@
 import {
   CardLeft,
   CardRight,
-  MiscItem,
-  ExpenseWrapper,
-  UserNameText,
   ExpenseAmount,
-  SummaryDiv,
+  ExpenseTitle,
+  ExpenseWrapper,
   MiscInfo,
+  MiscItem,
+  SummaryDiv,
+  UserNameText,
 } from "./styles/ExpenseCard.styled";
 
 import { Divider } from "./styles/Divider.styled";
 
-const ExpenseCard = () => {
+const ExpenseCard = ({
+  cost,
+  title,
+  date,
+  description,
+  clicked,
+  ownerName,
+}) => {
   return (
     <ExpenseWrapper>
       <CardLeft>
         <UserNameText>
-          <p>-Manuel-</p>
+          <p>-{ownerName}-</p>
         </UserNameText>
         <ExpenseAmount>
-          <p>$50</p>
+          <p>${cost}</p>
         </ExpenseAmount>
       </CardLeft>
       <Divider />
       <CardRight>
+        <ExpenseTitle>{title}</ExpenseTitle>
+
         <SummaryDiv>
-          <p>
-            Car ride to and from multiple bars in houston. thanks! testing for
-            other things such as very long summaries
-          </p>
+          <p>{description}</p>
         </SummaryDiv>
         <MiscInfo>
           <MiscItem>
             <div>Date</div>
-            <div>May 1st</div>
+            <div>{/*formatDate(date)*/}</div>
           </MiscItem>
           <Divider />
           <MiscItem>
+            {/* split by */}
             <div>split by</div>
             <div>50%</div>
           </MiscItem>
@@ -44,6 +52,7 @@ const ExpenseCard = () => {
 
           <MiscItem>
             <div>Total</div>
+            {/* initial cost */}
             <div>$75</div>
           </MiscItem>
         </MiscInfo>
