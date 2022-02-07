@@ -47,7 +47,7 @@ export const CardRight = styled.div`
 export const ExpenseTitle = styled.div`
   //placeholder color
   align-items: center;
-  background-color: ${({ theme }) => theme.colors.main};
+  background-color: ${({ colorAccent }) => colorAccent};
   border-radius: 8px;
   color: white;
   display: flex;

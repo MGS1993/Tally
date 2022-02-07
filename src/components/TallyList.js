@@ -4,6 +4,7 @@ import { mergeArray } from "../util/arrayManipulation";
 import { deleteExpense } from "../util/deleteExpense";
 import { getExpenses } from "../util/getExpenses";
 import ExpenseCard from "./ExpenseCard";
+import colors from "../util/colorArray";
 
 const TallyList = ({ data, userId, setData }) => {
   let list = [];
@@ -32,6 +33,7 @@ const TallyList = ({ data, userId, setData }) => {
         splitValue={item.splitValue}
         initialCost={item.initialCost}
         clicked={() => delExpenseAndUpdateState(userId, item._id)}
+        colorAccent={colors[index]}
       />
     );
   });
