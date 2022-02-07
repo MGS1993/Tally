@@ -10,6 +10,7 @@ export const StyledMenu = styled.div`
   position: fixed;
   transition: 0.5s ease-in-out;
   width: 100%;
+  z-index: 4;
 `;
 
 export const StyledForm = styled.form`

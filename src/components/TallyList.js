@@ -5,6 +5,7 @@ import { deleteExpense } from "../util/deleteExpense";
 import { getExpenses } from "../util/getExpenses";
 import ExpenseCard from "./ExpenseCard";
 import colors from "../util/colorArray";
+import { v4 as uuidv4 } from "uuid";
 
 const TallyList = ({ data, userId, setData }) => {
   let list = [];
@@ -24,7 +25,7 @@ const TallyList = ({ data, userId, setData }) => {
   mergedArray?.forEach((item, index) => {
     list.push(
       <ExpenseCard
-        key={index}
+        key={uuidv4()}
         cost={item.cost}
         title={item.title}
         date={item.date}

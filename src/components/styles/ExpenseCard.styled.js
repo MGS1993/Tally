@@ -44,10 +44,11 @@ export const CardRight = styled.div`
   flex-direction: column;
 `;
 
-export const ExpenseTitle = styled.div`
+export const TitleDivWrapper = styled.div`
   //placeholder color
   align-items: center;
-  background-color: ${({ colorAccent }) => colorAccent};
+  background-color: ${({ toggle, colorAccent }) =>
+    toggle === 1 ? "white" : colorAccent};
   border-radius: 8px;
   color: white;
   display: flex;
@@ -56,22 +57,46 @@ export const ExpenseTitle = styled.div`
   justify-content: center;
   position: relative;
   text-align: center;
+`;
 
-  & > :first-child {
-    //targets delete button div
-    position: absolute;
-    height: 22px;
-    width: 22px;
-    left: 5px;
-  }
+export const AnimationWrapper = styled.div`
+  border-radius: 8px;
+  display: flex;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #ff6640;
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  transition-property: transform;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-out;
 
-  & > :nth-child(2) {
-    display: block;
-    max-width: 150px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+  ${({ toggle }) =>
+    toggle &&
+    `
+      transform: scaleX(1);
+      transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+  `}
+
+  & > div:first-child {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    width: 100%;
   }
+`;
+
+export const DeleteButtonWrapper = styled.div`
+  position: absolute;
+  height: 22px;
+  width: 22px;
+  left: 5px;
 `;
 
 export const MiscItem = styled.div`

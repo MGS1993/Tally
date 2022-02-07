@@ -1,9 +1,12 @@
+import { useState } from "react";
 import { formatDate } from "../util/stringManipulation";
 import {
+  AnimationWrapper,
   CardLeft,
   CardRight,
+  DeleteButtonWrapper,
   ExpenseAmount,
-  ExpenseTitle,
+  TitleDivWrapper,
   ExpenseWrapper,
   MiscInfo,
   MiscItem,
@@ -13,7 +16,11 @@ import {
 
 import { Divider } from "./styles/Divider.styled";
 import DeleteButton from "./styles/DeleteButton.styled";
-
+import { ExpenseButton } from "./styles/Button.styled";
+//TODO make the username in expense absolute and center the post split value for a cleaner look
+//TODO align button text
+//TODO find out why buttons close in column formation
+//TODO find a better way to randomize colors
 const ExpenseCard = ({
   cost,
   title,
@@ -25,6 +32,8 @@ const ExpenseCard = ({
   initialCost,
   colorAccent,
 }) => {
+  const [isButtonToggled, setIsButtonToggled] = useState(false);
+
   return (
     <ExpenseWrapper>
       <CardLeft>
@@ -37,10 +46,27 @@ const ExpenseCard = ({
       </CardLeft>
       <Divider />
       <CardRight>
-        <ExpenseTitle colorAccent={colorAccent}>
-          <div>{<DeleteButton onClick={clicked} />}</div>
-          <div>{title?.length > 1 ? title : "No Title"}</div>
-        </ExpenseTitle>
+        <TitleDivWrapper
+          colorAccent={colorAccent}
+          toggle={isButtonToggled ? 1 : 0}
+        >
+          <AnimationWrapper toggle={isButtonToggled ? 1 : 0}>
+            <div>
+              <ExpenseButton onClick={clicked}>Delete</ExpenseButton>
+              <ExpenseButton onClick={() => setIsButtonToggled(false)}>
+                Cancel
+              </ExpenseButton>
+            </div>
+          </AnimationWrapper>
+          {isButtonToggled ? null : (
+            <>
+              <DeleteButtonWrapper>
+                {<DeleteButton onClick={() => setIsButtonToggled(true)} />}
+              </DeleteButtonWrapper>
+              <div>{title?.length > 1 ? title : "No Title"}</div>
+            </>
+          )}
+        </TitleDivWrapper>
 
         <SummaryDiv>
           {description?.length > 1 ? description : "No description provided"}

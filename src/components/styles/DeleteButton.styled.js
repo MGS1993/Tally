@@ -7,7 +7,6 @@ const StyledButton = styled.button`
   background-color: transparent;
   height: 100%;
   width: 100%;
-  z-index: 5;
 
   & > :first-child {
     height: 100%;
