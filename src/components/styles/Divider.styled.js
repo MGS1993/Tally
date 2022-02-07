@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Divider = styled.div`
   align-self: center;
-  border-left: 2px solid grey;
+  border-left: 1px solid grey;
   display: flex;
   height: 90%;
   width: 8px;
