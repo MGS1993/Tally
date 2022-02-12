@@ -1,11 +1,12 @@
 import React from "react";
 
 const TallyDisplay = ({ data, userName }) => {
+  let balance =
+    data?.calculatedUserExpenses - data?.calculatedOtherUserExpenses;
   const nameSetFunc = () => {
     let otherUser;
 
     userName === "manuel" ? (otherUser = "victoria") : (otherUser = "manuel");
-
     return otherUser;
   };
 
@@ -18,10 +19,9 @@ const TallyDisplay = ({ data, userName }) => {
 
       <div style={cardStyle}>
         <p style={text}>Balance</p>
-        <div id="difference" style={totalStyle}>
+        <div id="difference" style={balance < 0 ? DeficitText : totalStyle}>
           {/* '|| 0' added as initial render value */}
-          {data?.calculatedUserExpenses - data?.calculatedOtherUserExpenses ||
-            0}
+          {balance || 0}
         </div>
       </div>
 
@@ -49,7 +49,7 @@ const mainWrapper = {
   alignSelf: "center",
   backgroundColor: "white",
   borderRadius: "5px",
-  boxShadow: "0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)",
+  boxShadow: "0 4px 8px 0 rgba(0,0,0,0.2)",
   display: "flex",
   justifyContent: "center",
   marginTop: "25px",
@@ -61,6 +61,13 @@ const text = {
   color: "gray",
   fontSize: "14px",
   minHeight: "32px",
+  textTransform: "capitalize",
+};
+const DeficitText = {
+  color: "red",
+  fontSize: "28px",
+  fontWeight: "bold",
+  marginTop: "10%",
 };
 
 const totalStyle = {
