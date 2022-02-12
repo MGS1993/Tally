@@ -17,6 +17,7 @@ export const CardLeft = styled.div`
   display: flex;
   flex-basis: 30%;
   flex-direction: column;
+  position: relative;
 `;
 
 export const ExpenseAmount = styled.div`
@@ -35,6 +36,7 @@ export const UserNameText = styled.div`
   color: #808080;
   text-align: center;
   text-transform: capitalize;
+  position: absolute;
 `;
 
 //Right Card /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
