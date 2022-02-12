@@ -28,7 +28,7 @@ export const FormItem = styled.div`
   & > textarea {
     border: 2px solid #5cb6e2;
     color: #38334ccc;
-
+    font-family: "Roboto";
     font-size: 18px;
     padding: 8px 12px;
   }
