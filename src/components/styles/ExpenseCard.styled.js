@@ -90,13 +90,13 @@ export const AnimationWrapper = styled.div`
       transform: scaleX(1);
       transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
   `}
-
+  //delete and cancel button post animation
   & > div:first-child {
     align-items: center;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    justify-content: space-between;
+    justify-content: space-around;
     width: 100%;
   }
 `;

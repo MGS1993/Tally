@@ -5,9 +5,9 @@ export const StyledButton = styled(Button)`
   color: white;
   font-weight: bold;
   /* padding: 0px; */
-  width: 90%;
+  /* width: 90%; */
 `;
 
 export const ExpenseButton = styled(StyledButton)`
-  padding: 0;
+  /* padding: 0; */
 `;
