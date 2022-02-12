@@ -18,8 +18,7 @@ import {
 import { Divider } from "./styles/Divider.styled";
 import DeleteButton from "./styles/DeleteButton.styled";
 import { ExpenseButton } from "./styles/Button.styled";
-//TODO find a better way to randomize colors
-//TODO clean up flex code in title divs
+
 const ExpenseCard = ({
   cost,
   title,
