@@ -55,10 +55,17 @@ export const TitleDivWrapper = styled.div`
   color: white;
   display: flex;
   font-size: 1.4rem;
-  height: 40px;
+  min-height: 40px;
   justify-content: center;
   position: relative;
   text-align: center;
+`;
+
+export const Title = styled.div`
+  max-width: 70%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 `;
 
 export const AnimationWrapper = styled.div`

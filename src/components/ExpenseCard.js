@@ -12,6 +12,7 @@ import {
   MiscItem,
   SummaryDiv,
   UserNameText,
+  Title,
 } from "./styles/ExpenseCard.styled";
 
 import { Divider } from "./styles/Divider.styled";
@@ -63,7 +64,7 @@ const ExpenseCard = ({
               <DeleteButtonWrapper>
                 {<DeleteButton onClick={() => setIsButtonToggled(true)} />}
               </DeleteButtonWrapper>
-              <div>{title?.length > 1 ? title : "No Title"}</div>
+              <Title>{title?.length > 1 ? title : "No Title"}</Title>
             </>
           )}
         </TitleDivWrapper>
