@@ -1,11 +1,11 @@
 import React from "react";
-
 import { GiHamburgerMenu } from "react-icons/gi";
 import { BsFillBarChartLineFill } from "react-icons/bs";
 import Icon from "./Icon";
 import Menu from "./Menu";
+import { Link } from "react-router-dom";
 import { Container, StyledFooter } from "./styles/NavFooter.styled";
-
+//TODO find a way to make icon change color based on route
 const NavFooter = ({
   allUsers,
   clicked,
@@ -29,10 +29,21 @@ const NavFooter = ({
       <StyledFooter>
         <Container>
           <div>
-            <Icon IconName={BsFillBarChartLineFill} size={30} />
+            {/* disables history link if menu is toggled */}
+            {menuToggle ? (
+              <Icon IconName={BsFillBarChartLineFill} size={30} />
+            ) : (
+              <Link to="/history">
+                <Icon IconName={BsFillBarChartLineFill} size={30} />
+              </Link>
+            )}
           </div>
           <div onClick={clicked}>
-            <Icon IconName={GiHamburgerMenu} size={30} />
+            <Icon
+              IconName={GiHamburgerMenu}
+              size={30}
+              activeColor={menuToggle}
+            />
           </div>
         </Container>
       </StyledFooter>

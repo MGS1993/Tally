@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import AuthContext from "./auth/context";
 import Header from "./components/Header";
 import Home from "./Pages/Home";
+import History from "./Pages/History";
 import NavFooter from "./components/NavFooter";
 import useApi from "./hooks/useApi";
 import { getExpenses } from "./util/getExpenses";
@@ -26,6 +27,7 @@ const ReactRouter = () => {
       <Header />
       <Routes>
         <Route path="/" element={<Home data={data} setData={setData} />} />
+        <Route path="/history" element={<History />} />
       </Routes>
       <NavFooter
         //Drill prop to Menu.js
