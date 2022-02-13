@@ -13,11 +13,11 @@ import {
   StyledForm,
   StyledInput,
   StyledMenu,
-  TitleDiv,
+  InputMod,
 } from "./styles/Menu.styled";
 import ToggleToken from "./ToggleToken";
 import Slider from "@mui/material/Slider";
-import { StyledButton } from "./styles/Button.styled";
+import { FormSubmitBtn } from "./styles/Button.styled";
 
 const Menu = ({ allUsers, setData, setMenuToggle, menuToggle, style }) => {
   const userContext = useContext(AuthContext);
@@ -29,6 +29,8 @@ const Menu = ({ allUsers, setData, setMenuToggle, menuToggle, style }) => {
   const [designatedToggle, setDesignatedToggle] = useState(false);
   const [designation, setDesignation] = useState("");
   const [loopClick, setLoopClick] = useState(0);
+  //input type used for date
+  const [inputType, setInputType] = useState("text");
   const {
     register,
     handleSubmit,
@@ -39,8 +41,7 @@ const Menu = ({ allUsers, setData, setMenuToggle, menuToggle, style }) => {
 
   const changeOwner = () => {
     setDesignatedToggle(true);
-    /* used click counter to determine even or false and
-    used to loop through array and set designated state via clicks */
+    /* changes owner based on loop modulus */
     setLoopClick((prevState) => prevState + 1);
     const isEven = loopClick % 2 === 0 ? 1 : 0;
     setDesignation(allUsers[isEven]);
@@ -54,13 +55,13 @@ const Menu = ({ allUsers, setData, setMenuToggle, menuToggle, style }) => {
     data.cost = calculatedExpense;
     data.splitValue = splitValue;
     data.initialCost = initialCost;
-    console.log(data);
     designation !== ""
       ? await addExpense(data, designation._id)
       : await addExpense(data, userContext.user._id);
 
     const newExpenses = await getExpenses(userContext.user._id);
     setData(newExpenses);
+
     reset();
     //Post reset form cleanup
     setSplitValue(50);
@@ -68,6 +69,7 @@ const Menu = ({ allUsers, setData, setMenuToggle, menuToggle, style }) => {
     setIsInputEmpty(true);
     setMenuToggle(!menuToggle);
     setInitialCost("");
+    setInputType("text");
   };
 
   const sliderFunc = (value) => {
@@ -93,8 +95,8 @@ const Menu = ({ allUsers, setData, setMenuToggle, menuToggle, style }) => {
       >
         <>
           <FormItem>
-            <TitleDiv>
-              Cost
+            <InputMod>
+              {/* Cost */}
               <ToggleToken
                 disabled={isInputEmpty}
                 toggled={toggled}
@@ -106,7 +108,7 @@ const Menu = ({ allUsers, setData, setMenuToggle, menuToggle, style }) => {
                 toggled={designatedToggle}
                 clicked={() => changeOwner()}
               />
-            </TitleDiv>
+            </InputMod>
             <InputWrapper>
               <StyledInput
                 type="number"
@@ -140,7 +142,7 @@ const Menu = ({ allUsers, setData, setMenuToggle, menuToggle, style }) => {
         </>
 
         <FormItem className={styles.titleWrapper}>
-          <TitleDiv>Title</TitleDiv>
+          {/* <TitleDiv>Title</TitleDiv> */}
           <StyledInput
             type="text"
             id="title-input"
@@ -150,11 +152,13 @@ const Menu = ({ allUsers, setData, setMenuToggle, menuToggle, style }) => {
           />
         </FormItem>
         <FormItem className={styles.dateWrapper}>
-          <TitleDiv>Date</TitleDiv>
+          {/* <TitleDiv>Date</TitleDiv> */}
           <StyledInput
-            type="date"
+            type={inputType}
             id="date-picker"
             name="date"
+            placeholder="Date"
+            onFocus={() => setInputType("date")}
             {...register("date")}
           />
         </FormItem>
@@ -170,9 +174,9 @@ const Menu = ({ allUsers, setData, setMenuToggle, menuToggle, style }) => {
           />
         </FormItem>
 
-        <StyledButton variant="contained" type="submit">
+        <FormSubmitBtn variant="contained" type="submit">
           Submit Expense
-        </StyledButton>
+        </FormSubmitBtn>
       </StyledForm>
     </StyledMenu>
   );

@@ -8,6 +8,7 @@ export const StyledButton = styled(Button)`
   /* width: 90%; */
 `;
 
-export const ExpenseButton = styled(StyledButton)`
-  /* padding: 0; */
+export const FormSubmitBtn = styled(StyledButton)`
+  padding: 10px;
+  width: 90%;
 `;

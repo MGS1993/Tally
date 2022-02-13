@@ -17,7 +17,7 @@ import {
 
 import { Divider } from "./styles/Divider.styled";
 import DeleteButton from "./styles/DeleteButton.styled";
-import { ExpenseButton } from "./styles/Button.styled";
+import { StyledButton } from "./styles/Button.styled";
 
 const ExpenseCard = ({
   cost,
@@ -50,10 +50,10 @@ const ExpenseCard = ({
         >
           <AnimationWrapper toggle={isButtonToggled ? 1 : 0}>
             <div>
-              <ExpenseButton onClick={clicked}>Delete</ExpenseButton>
-              <ExpenseButton onClick={() => setIsButtonToggled(false)}>
+              <StyledButton onClick={clicked}>Delete</StyledButton>
+              <StyledButton onClick={() => setIsButtonToggled(false)}>
                 Cancel
-              </ExpenseButton>
+              </StyledButton>
             </div>
           </AnimationWrapper>
           {isButtonToggled ? null : (

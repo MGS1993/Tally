@@ -27,6 +27,7 @@ export const FormItem = styled.div`
 
   & > textarea {
     border: 2px solid #5cb6e2;
+    border-radius: 8px;
     color: #38334ccc;
     font-family: "Roboto";
     font-size: 18px;
@@ -36,18 +37,19 @@ export const FormItem = styled.div`
 
 export const StyledInput = styled.input`
   border: 2px solid #5cb6e2;
+  border-radius: 10px;
   color: #38334ccc;
   font-size: 26px;
   padding: 8px 12px;
   width: inherit;
 `;
 
-export const TitleDiv = styled.div`
+export const InputMod = styled.div`
   align-items: center;
-  background-color: #f0f9fe;
+  background-color: #fff;
   color: #5cb6e2;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   font-size: 28px;
   font-weight: bold;
   padding: 10px 12px;
