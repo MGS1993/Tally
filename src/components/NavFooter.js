@@ -1,9 +1,10 @@
 import React from "react";
-import styles from "../cssModules/NavFooter.module.css";
 
 import { GiHamburgerMenu } from "react-icons/gi";
+import { BsFillBarChartLineFill } from "react-icons/bs";
 import Icon from "./Icon";
 import Menu from "./Menu";
+import { Container, StyledFooter } from "./styles/NavFooter.styled";
 
 const NavFooter = ({
   allUsers,
@@ -25,13 +26,16 @@ const NavFooter = ({
       ) : (
         <Menu />
       )}
-      <div id="burger" className={styles.mainWrapper}>
-        <div className={styles.secondaryWrapper}>
+      <StyledFooter>
+        <Container>
+          <div>
+            <Icon IconName={BsFillBarChartLineFill} size={30} />
+          </div>
           <div onClick={clicked}>
             <Icon IconName={GiHamburgerMenu} size={30} />
           </div>
-        </div>
-      </div>
+        </Container>
+      </StyledFooter>
     </>
   );
 };
