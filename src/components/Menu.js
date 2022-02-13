@@ -18,6 +18,7 @@ import {
 import ToggleToken from "./ToggleToken";
 import Slider from "@mui/material/Slider";
 import { FormSubmitBtn } from "./styles/Button.styled";
+import colors from "../util/colorArray";
 
 const Menu = ({ allUsers, setData, setMenuToggle, menuToggle, style }) => {
   const userContext = useContext(AuthContext);
@@ -52,9 +53,11 @@ const Menu = ({ allUsers, setData, setMenuToggle, menuToggle, style }) => {
   };
 
   const addExpenseAndState = async (data) => {
+    let exLabelColor = colors[Math.floor(Math.random() * colors.length)];
     data.cost = calculatedExpense;
     data.splitValue = splitValue;
     data.initialCost = initialCost;
+    data.exLabelColor = exLabelColor;
     designation !== ""
       ? await addExpense(data, designation._id)
       : await addExpense(data, userContext.user._id);
