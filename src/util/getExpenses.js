@@ -20,3 +20,14 @@ export const getExpenses = async (userId) => {
     console.log("Error in getExpense function:", error);
   }
 };
+
+export const getHistoricalExpenses = async () => {
+  try {
+    const response = await fetch(`/api/getHistoricalExpenses`);
+    const data = await response.json();
+
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
+};
