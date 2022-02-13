@@ -116,6 +116,7 @@ const Menu = ({ allUsers, setData, setMenuToggle, menuToggle, style }) => {
                 inputMode="numeric"
                 placeholder="Cost (required)"
                 name="cost"
+                step="0.01"
                 onInput={(value) => inputCalculator(value)}
                 {...register("cost", { required: true })}
               />
