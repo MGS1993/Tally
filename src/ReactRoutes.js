@@ -27,7 +27,7 @@ const ReactRouter = () => {
       <Header />
       <Routes>
         <Route path="/" element={<Home data={data} setData={setData} />} />
-        <Route path="/history" element={<History />} />
+        <Route path="/history" element={<History user={userContext?.user} />} />
       </Routes>
       <NavFooter
         //Drill prop to Menu.js
