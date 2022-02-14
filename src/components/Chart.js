@@ -21,6 +21,7 @@ export const Chart = React.memo(({ hData, user }) => {
             label={true}
             labelLine={false}
             onAnimationEnd={() => setAnimationFinished(true)}
+            legendType="square"
           >
             {data.finishedData.map((entry, index) => (
               <Cell key={`cell-${index}`} fill={colors[index]} />
