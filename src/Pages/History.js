@@ -9,10 +9,9 @@ const History = ({ user }) => {
   let { allHistoricalExpenses: hData } = data;
   useEffect(() => {
     getData();
+    // eslint-disable-next-line
   }, []);
 
-  // console.log(data);
-  // console.log(allHistoricalExpenses);
   return (
     <StyledHistory>
       {hData && user ? <Chart hData={hData} user={user} /> : null}
