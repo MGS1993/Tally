@@ -33,11 +33,15 @@ export const LoginContainer = styled.div`
 export const LoginForm = styled.form`
   display: flex;
   flex-direction: column;
-  /* margin-top: 30vh; */
   width: 80vw;
 
   div {
     margin: 10px 0px;
+  }
+
+  div > input:focus-visible {
+    border: 2px solid #cf82fb;
+    outline: none;
   }
 
   button {

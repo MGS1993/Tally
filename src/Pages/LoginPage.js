@@ -25,10 +25,10 @@ const LoginPage = () => {
 
   const loginFunction = async (formData) => {
     const { response, data } = await login(formData);
-    // if (response.status === 200) {
-    //   localStorage.setItem("user", JSON.stringify(data));
-    //   authContext.setUser(data);
-    // }
+    if (response.status === 200) {
+      localStorage.setItem("user", JSON.stringify(data));
+      authContext.setUser(data);
+    }
 
     // console.log("response:", response);
     // console.log("data:", data);
