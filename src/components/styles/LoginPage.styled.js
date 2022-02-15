@@ -1,13 +1,12 @@
 import styled from "styled-components";
 
 export const Title = styled.div`
-  @import url("https://fonts.googleapis.com/css2?family=Anton&family=Dancing+Script:wght@700&display=swap");
   position: absolute;
   font-family: "Dancing Script", cursive;
   left: 0;
   right: 0;
-  font-size: 30px;
-  color: dodgerblue;
+  font-size: 35px;
+  color: white;
   margin-left: 0;
   margin-right: 0;
   width: 200px;
@@ -34,6 +33,15 @@ export const LoginContainer = styled.div`
 export const LoginForm = styled.form`
   display: flex;
   flex-direction: column;
-  margin-top: 30vh;
+  /* margin-top: 30vh; */
   width: 80vw;
+
+  div {
+    margin: 10px 0px;
+  }
+
+  button {
+    font-size: 18px;
+    margin-top: 10px;
+  }
 `;
