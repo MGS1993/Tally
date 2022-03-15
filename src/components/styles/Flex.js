@@ -10,5 +10,5 @@ export const FlexCol = styled.div`
 export const FlexRow = styled.div`
   align-items: center;
   display: flex;
-  justify-content: center;
+  justify-content: ${({ justifyContent }) => justifyContent || "center"};
 `;

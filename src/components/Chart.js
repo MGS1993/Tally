@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { ResponsiveContainer, PieChart, Cell, Pie, Legend } from "recharts";
 import sortChartData from "../util/sortChartData";
 import colors from "../util/colorArray";

@@ -1,8 +1,8 @@
-import ExpenseCard from "./ExpenseCard";
 import HistoricalCard from "./HistoricalCard";
-
+import SortableContainer from "./SortableContainer";
 const HistoricalList = ({ data }) => {
-  const list = [];
+  let list = [];
+
   data?.forEach((item, index) => {
     list.push(
       <HistoricalCard
@@ -14,12 +14,11 @@ const HistoricalList = ({ data }) => {
         ownerName={item.ownerName}
         splitValue={item.splitValue}
         initialCost={item.initialCost}
-        // clicked={() => delExpenseAndUpdateState(userId, item._id)}
-        colorAccent={item.exLabelColor}
       />
     );
   });
-  return <div>{list}</div>;
+
+  return <SortableContainer list={list} />;
 };
 
 export default HistoricalList;

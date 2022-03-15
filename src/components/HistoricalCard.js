@@ -1,12 +1,11 @@
 import { StyledCard } from "./styles/HistoricalCard.styled";
-import { FlexCol, FlexRow } from "./styles/Flex";
-import { formatDate } from "../util/stringManipulation";
+import { format, parseISO } from "date-fns";
 const HistoricalCard = ({ cost, date, ownerName }) => {
   return (
     <StyledCard>
       <div>{ownerName}</div>
       <div>{cost}</div>
-      <div>{date}</div>
+      <div>{format(parseISO(date), "MM-d-yy")}</div>
     </StyledCard>
   );
 };
