@@ -3,6 +3,7 @@ import React from "react";
 const TallyDisplay = ({ data, userName }) => {
   let balance =
     data?.calculatedUserExpenses - data?.calculatedOtherUserExpenses;
+  //TODO replace nameSetFunc with dynamic code
   const nameSetFunc = () => {
     let otherUser;
 

@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const StyledCard = styled.div`
   background-color: #fff;
-  border: 1px solid #c9c9c9c9;
+  border: 2px solid ${({ borderColor }) => borderColor || "#c9c9c9c9"};
   border-radius: 6px;
   display: flex;
   justify-content: space-between;

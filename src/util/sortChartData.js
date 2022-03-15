@@ -1,4 +1,5 @@
 const sortChartData = (hData, user) => {
+  if (!hData) return;
   const userData = [];
   const otherUserData = [];
   let userName;
@@ -36,8 +37,8 @@ const sortChartData = (hData, user) => {
 
     //Building final object array with processed data
     const total = [
-      { name: userName, value: userTotal },
-      { name: otherUserName, value: otherUserTotal },
+      { name: userName, value: userTotal, color: "dodgerblue" },
+      { name: otherUserName, value: otherUserTotal, color: "#f95959" },
     ];
     return total;
   };

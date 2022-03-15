@@ -1,7 +1,9 @@
 import HistoricalCard from "./HistoricalCard";
 import SortableContainer from "./SortableContainer";
-const HistoricalList = ({ data }) => {
+const HistoricalList = ({ data, chartData, user }) => {
   let list = [];
+  let { finishedData } = chartData;
+  console.log(finishedData);
 
   data?.forEach((item, index) => {
     list.push(
@@ -14,6 +16,9 @@ const HistoricalList = ({ data }) => {
         ownerName={item.ownerName}
         splitValue={item.splitValue}
         initialCost={item.initialCost}
+        accentColor={
+          item.ownerName === user.userName ? "dodgerblue" : "#f95959"
+        }
       />
     );
   });
