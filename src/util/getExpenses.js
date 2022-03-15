@@ -22,6 +22,7 @@ export const getExpenses = async (userId) => {
 };
 
 export const getHistoricalExpenses = async () => {
+  console.log("historical expenses called.");
   try {
     const response = await fetch(`/api/getHistoricalExpenses`);
     const data = await response.json();
