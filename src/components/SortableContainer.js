@@ -18,6 +18,7 @@ const SortableContainer = ({ list }) => {
     setHistoricalList(newList);
     setExpenseLowToHigh(!expenseLowToHigh);
     setExpenseToggle(true);
+    setDateToggle(false);
   };
 
   const sortLowToHigh = () => {
@@ -26,6 +27,7 @@ const SortableContainer = ({ list }) => {
     setHistoricalList(newList);
     setExpenseLowToHigh(!expenseLowToHigh);
     setExpenseToggle(true);
+    setDateToggle(false);
   };
 
   const sortDateOld = () => {
@@ -34,6 +36,7 @@ const SortableContainer = ({ list }) => {
     setHistoricalList(newList);
     setDateOldToNew(!dateOldToNew);
     setDateToggle(true);
+    setExpenseToggle(false);
   };
 
   const sortDateNew = () => {
@@ -42,6 +45,7 @@ const SortableContainer = ({ list }) => {
     setHistoricalList(newList);
     setDateOldToNew(!dateOldToNew);
     setDateToggle(true);
+    setExpenseToggle(false);
   };
   return (
     <div>
