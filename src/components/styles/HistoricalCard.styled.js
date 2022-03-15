@@ -12,6 +12,8 @@ export const StyledCard = styled.div`
 
   & > div {
     padding: 20px 20px;
+    flex: 1;
+    text-align: center;
     text-transform: capitalize;
   }
 `;
