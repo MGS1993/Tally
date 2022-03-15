@@ -1,11 +1,10 @@
 import HistoricalCard from "./HistoricalCard";
 import SortableContainer from "./SortableContainer";
-const HistoricalList = ({ data, chartData, user }) => {
+const HistoricalList = ({ data, user }) => {
   let list = [];
-  let { finishedData } = chartData;
-  console.log(finishedData);
 
   data?.forEach((item, index) => {
+    //accentColor compares logged in user vs expense owner
     list.push(
       <HistoricalCard
         key={index}

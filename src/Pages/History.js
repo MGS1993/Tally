@@ -30,9 +30,7 @@ const History = ({ user }) => {
         />
       ) : null}
       {/* waits for animation to finish before serving HistoricalList */}
-      {animationFinished ? (
-        <HistoricalList data={hData} chartData={chartData} user={user} />
-      ) : null}
+      {animationFinished ? <HistoricalList data={hData} user={user} /> : null}
     </StyledHistory>
   );
 };
