@@ -18,7 +18,6 @@ export const StyledForm = styled.form`
   flex-direction: column;
   font-family: "Roboto";
   overflow-y: scroll;
-  /* margin: 20% 0px; */
 `;
 export const FormItem = styled.div`
   display: flex;
@@ -58,6 +57,7 @@ export const InputMod = styled.div`
 
 export const InputWrapper = styled.div`
   display: flex;
+  flex-direction: column;
   position: relative;
   width: 100%;
 `;
