@@ -11,6 +11,7 @@ import { login } from "../util/auth";
 import AuthContext from "../auth/context";
 import loginSchema from "../Validations/LoginValidation";
 import { yupResolver } from "@hookform/resolvers/yup";
+import MobileAlert from "../components/styles/MobileAlert";
 
 //TODO finish login validation errors
 const LoginPage = () => {
@@ -39,6 +40,9 @@ const LoginPage = () => {
       <Title>
         <h1>Tally</h1>
       </Title>
+      <MobileAlert>
+        <p>Hello! This website is best used on mobile</p>
+      </MobileAlert>
       <LoginForm onSubmit={handleSubmit(loginFunction)}>
         <InputWrapper>
           <StyledInput

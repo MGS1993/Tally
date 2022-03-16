@@ -17,7 +17,7 @@ function App() {
   }, []);
 
   return (
-    <AuthContext.Provider value={{ user, setUser /*data, setData*/ }}>
+    <AuthContext.Provider value={{ user, setUser }}>
       <div className="App">{user ? <ReactRouter /> : <LoginPage />}</div>
     </AuthContext.Provider>
   );
