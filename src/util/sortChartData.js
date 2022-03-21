@@ -4,8 +4,6 @@ const sortChartData = (hData, currentUser, linkedUser) => {
   const otherUserData = [];
   let userName = currentUser?.userName;
   let otherUserName = linkedUser?.userName;
-  // console.log("userData:", userData);
-  // console.log("otheruserData:", otherUserData);
   //splits hData into variables with relevant data
   for (let i = 0; i < hData.length; i++) {
     if (hData[i].ownerName === userName) {
