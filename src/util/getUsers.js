@@ -1,6 +1,6 @@
-const getUsers = async () => {
+const getLinkedUsers = async (userId) => {
   try {
-    const response = await fetch("/api/getAllUsers");
+    const response = await fetch(`/api/getLinkedUsers/${userId}`);
     const data = await response.json();
 
     return data;
@@ -9,4 +9,4 @@ const getUsers = async () => {
   }
 };
 
-export default getUsers;
+export default getLinkedUsers;

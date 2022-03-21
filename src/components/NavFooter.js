@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 import { Container, StyledFooter } from "./styles/NavFooter.styled";
 import { useLocation } from "react-router-dom";
 const NavFooter = ({
-  allUsers,
+  linkedUsers,
   clicked,
   menuToggle,
   setMenuToggle,
@@ -43,7 +43,7 @@ const NavFooter = ({
     <>
       {menuToggle ? (
         <Menu
-          allUsers={allUsers}
+          linkedUsers={linkedUsers}
           setData={setData}
           menuToggle={menuToggle}
           setMenuToggle={setMenuToggle}

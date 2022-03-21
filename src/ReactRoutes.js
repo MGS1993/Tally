@@ -8,18 +8,18 @@ import History from "./Pages/History";
 import NavFooter from "./components/NavFooter";
 import useApi from "./hooks/useApi";
 import { getExpenses } from "./util/getExpenses";
-import getUsers from "./util/getUsers";
+import getLinkedUsers from "./util/getUsers";
 
 const ReactRouter = () => {
   const [menuToggle, setMenuToggle] = useState(false);
   const userContext = useContext(AuthContext);
 
   const { data, setData, request: getExpenseData } = useApi(getExpenses);
-  const { data: allUsers, request: getAllUsers } = useApi(getUsers);
+  const { data: linkedUsers, request: getUsers } = useApi(getLinkedUsers);
 
   useEffect(() => {
     getExpenseData(userContext?.user._id);
-    getAllUsers();
+    getUsers(userContext?.user._id);
     // eslint-disable-next-line
   }, []);
   return (
@@ -31,7 +31,7 @@ const ReactRouter = () => {
       </Routes>
       <NavFooter
         //Drill prop to Menu.js
-        allUsers={allUsers}
+        linkedUsers={linkedUsers}
         clicked={() => setMenuToggle(!menuToggle)}
         menuToggle={menuToggle}
         setMenuToggle={setMenuToggle}

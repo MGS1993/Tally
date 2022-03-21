@@ -20,7 +20,7 @@ import Slider from "@mui/material/Slider";
 import { FormSubmitBtn } from "./styles/Button.styled";
 import colors from "../util/colorArray";
 
-const Menu = ({ allUsers, setData, setMenuToggle, menuToggle, style }) => {
+const Menu = ({ linkedUsers, setData, setMenuToggle, menuToggle, style }) => {
   const userContext = useContext(AuthContext);
   const [toggled, setToggled] = useState(false);
   const [calculatedExpense, setCalculatedExpense] = useState();
@@ -45,7 +45,7 @@ const Menu = ({ allUsers, setData, setMenuToggle, menuToggle, style }) => {
     /* changes owner based on loop modulus */
     setLoopClick((prevState) => prevState + 1);
     const isEven = loopClick % 2 === 0 ? 1 : 0;
-    setDesignation(allUsers[isEven]);
+    setDesignation(linkedUsers[isEven]);
   };
 
   const handleInputStatus = (value) => {
