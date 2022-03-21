@@ -4,7 +4,7 @@ import { StyledIconWrapper } from "./styles/MenuIcon.styled";
 
 const Icon = ({ size = "20px", IconName, activeColor, color }) => {
   return (
-    <StyledIconWrapper iconSize={size}>
+    <StyledIconWrapper iconSize={size} tempColor>
       <IconName
         color={color || activeColor ? "#1976d2" : "black"}
         size={size}

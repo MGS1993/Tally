@@ -7,7 +7,6 @@ import Menu from "./Menu";
 import { Link } from "react-router-dom";
 import { Container, StyledFooter } from "./styles/NavFooter.styled";
 import { useLocation } from "react-router-dom";
-//TODO find a way to make icon change color based on route
 const NavFooter = ({
   allUsers,
   clicked,
