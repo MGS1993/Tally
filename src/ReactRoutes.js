@@ -49,6 +49,7 @@ const ReactRouter = () => {
       </Routes>
       <NavFooter
         //Drill prop to Menu.js
+        currentUser={userContext?.user}
         linkedUsers={linkedUsers}
         clicked={() => setMenuToggle(!menuToggle)}
         menuToggle={menuToggle}

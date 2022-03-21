@@ -1,7 +1,6 @@
 import React, { useContext, useState } from "react";
 import styles from "../cssModules/Menu.module.css";
 import { useForm } from "react-hook-form";
-import AuthContext from "../auth/context";
 
 import { addExpense } from "../util/addExpense";
 import { getExpenses } from "../util/getExpenses";
@@ -20,8 +19,14 @@ import Slider from "@mui/material/Slider";
 import { FormSubmitBtn } from "./styles/Button.styled";
 import colors from "../util/colorArray";
 
-const Menu = ({ linkedUsers, setData, setMenuToggle, menuToggle, style }) => {
-  const userContext = useContext(AuthContext);
+const Menu = ({
+  currentUser,
+  linkedUsers,
+  setData,
+  setMenuToggle,
+  menuToggle,
+  style,
+}) => {
   const [toggled, setToggled] = useState(false);
   const [calculatedExpense, setCalculatedExpense] = useState();
   const [initialCost, setInitialCost] = useState("");
@@ -42,7 +47,7 @@ const Menu = ({ linkedUsers, setData, setMenuToggle, menuToggle, style }) => {
 
   const changeOwner = () => {
     setDesignatedToggle(true);
-    /* changes owner based on loop modulus */
+    /* changes owner based on modulus */
     setLoopClick((prevState) => prevState + 1);
     const isEven = loopClick % 2 === 0 ? 1 : 0;
     setDesignation(linkedUsers[isEven]);
@@ -58,11 +63,12 @@ const Menu = ({ linkedUsers, setData, setMenuToggle, menuToggle, style }) => {
     data.splitValue = splitValue;
     data.initialCost = initialCost;
     data.exLabelColor = exLabelColor;
+    //if designation button isn't active it charges currentUser
     designation !== ""
       ? await addExpense(data, designation._id)
-      : await addExpense(data, userContext.user._id);
-
-    const newExpenses = await getExpenses(userContext.user._id);
+      : await addExpense(data, currentUser._id);
+    //retrieves new expense data and updates state
+    const newExpenses = await getExpenses(currentUser._id);
     setData(newExpenses);
 
     reset();
