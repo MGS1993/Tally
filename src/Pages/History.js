@@ -6,13 +6,13 @@ import { Chart } from "../components/Chart";
 import HistoricalList from "../components/HistoricalList";
 import sortChartData from "../util/sortChartData";
 
-const History = ({ currentUser }) => {
+const History = ({ currentUser, linkedUser }) => {
   const [animationFinished, setAnimationFinished] = useState(false);
 
   const { data, request: getData } = useApi(getHistoricalExpenses);
   let { allHistoricalExpenses: hData } = data;
 
-  let chartData = sortChartData(hData, currentUser);
+  let chartData = sortChartData(hData, currentUser, linkedUser);
   // console.log(chartData);
 
   useEffect(() => {

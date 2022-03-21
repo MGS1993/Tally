@@ -42,7 +42,9 @@ const ReactRouter = () => {
         />
         <Route
           path="/history"
-          element={<History currentUser={userContext?.user} />}
+          element={
+            <History currentUser={userContext?.user} linkedUser={linkedUser} />
+          }
         />
       </Routes>
       <NavFooter

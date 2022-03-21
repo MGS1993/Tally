@@ -1,29 +1,24 @@
-const sortChartData = (hData, user) => {
+const sortChartData = (hData, currentUser, linkedUser) => {
   if (!hData) return;
   const userData = [];
   const otherUserData = [];
-  let userName;
-  let otherUserName;
-
-  //Dynamically changes names
-  if (user.userName === "manuel") {
-    userName = "Manuel";
-    otherUserName = "Victoria";
-  } else {
-    userName = "Victoria";
-    otherUserName = "Manuel";
-  }
+  let userName = currentUser?.userName;
+  let otherUserName = linkedUser?.userName;
+  // console.log("userData:", userData);
+  // console.log("otheruserData:", otherUserData);
   //splits hData into variables with relevant data
   for (let i = 0; i < hData.length; i++) {
-    hData[i].ownerName === user.userName
-      ? userData.push({
-          name: hData[i].ownerName,
-          value: parseInt(hData[i].cost),
-        })
-      : otherUserData.push({
-          name: hData[i].ownerName,
-          value: parseInt(hData[i].cost),
-        });
+    if (hData[i].ownerName === userName) {
+      userData.push({
+        name: hData[i].ownerName,
+        value: parseInt(hData[i].cost),
+      });
+    } else if (hData[i].ownerName === linkedUser?.userName) {
+      otherUserData.push({
+        name: hData[i].ownerName,
+        value: parseInt(hData[i].cost),
+      });
+    }
   }
 
   //returns final data object to be used for graph
