@@ -4,12 +4,10 @@ import { mergeArray } from "../util/arrayManipulation";
 import { deleteExpense } from "../util/deleteExpense";
 import { getExpenses } from "../util/getExpenses";
 import ExpenseCard from "./ExpenseCard";
-// import colors from "../util/colorArray";
 import { v4 as uuidv4 } from "uuid";
 
 const TallyList = ({ data, userId, setData }) => {
   let list = [];
-
   const mergedArray = mergeArray(
     data?.userExpenses,
     data?.otherUserExpenses,

@@ -1,20 +1,13 @@
 import React from "react";
 
-const TallyDisplay = ({ data, userName }) => {
+const TallyDisplay = ({ data, currentUser, linkedUser }) => {
+  //TODO add loading screen
   let balance =
     data?.calculatedUserExpenses - data?.calculatedOtherUserExpenses;
-  //TODO replace nameSetFunc with dynamic code
-  const nameSetFunc = () => {
-    let otherUser;
-
-    userName === "manuel" ? (otherUser = "victoria") : (otherUser = "manuel");
-    return otherUser;
-  };
-
   return (
     <div style={mainWrapper}>
       <div style={cardStyle}>
-        <p style={text}>{`${userName}'s Expenses`}</p>
+        <p style={text}>{`${currentUser}'s Expenses`}</p>
         <div style={totalStyle}>{data?.calculatedUserExpenses} </div>
       </div>
 
@@ -27,7 +20,7 @@ const TallyDisplay = ({ data, userName }) => {
       </div>
 
       <div style={cardStyle}>
-        <p style={text}>{`${nameSetFunc()}'s Expenses`}</p>
+        <p style={text}>{`${linkedUser}'s Expenses`}</p>
         <div style={totalStyle}>{data?.calculatedOtherUserExpenses}</div>
       </div>
     </div>

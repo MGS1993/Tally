@@ -6,13 +6,13 @@ import { Chart } from "../components/Chart";
 import HistoricalList from "../components/HistoricalList";
 import sortChartData from "../util/sortChartData";
 
-const History = ({ user }) => {
+const History = ({ currentUser }) => {
   const [animationFinished, setAnimationFinished] = useState(false);
 
   const { data, request: getData } = useApi(getHistoricalExpenses);
   let { allHistoricalExpenses: hData } = data;
 
-  let chartData = sortChartData(hData, user);
+  let chartData = sortChartData(hData, currentUser);
   // console.log(chartData);
 
   useEffect(() => {
@@ -30,7 +30,9 @@ const History = ({ user }) => {
         />
       ) : null}
       {/* waits for animation to finish before serving HistoricalList */}
-      {animationFinished ? <HistoricalList data={hData} user={user} /> : null}
+      {animationFinished ? (
+        <HistoricalList data={hData} currentUser={currentUser} />
+      ) : null}
     </StyledHistory>
   );
 };

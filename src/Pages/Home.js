@@ -1,21 +1,21 @@
-import React, { useContext } from "react";
+import React from "react";
 
-import AuthContext from "../auth/context";
 import TallyDisplay from "../components/TallyDisplay";
 import TallyList from "../components/TallyList";
 
-const Home = ({ data, setData }) => {
-  const authContext = useContext(AuthContext);
+const Home = ({ data, setData, currentUser, linkedUser }) => {
+  //TODO fix rerender on opening nav menu
+  // console.log(currentUser);
+  // console.log(linkedUser);
   return (
     <div style={mainWrapper}>
-      <TallyDisplay data={data} userName={authContext?.user.userName} />
-
-      <TallyList
+      <TallyDisplay
         data={data}
-        userId={authContext?.user._id}
-        userName={authContext?.user.userName}
-        setData={setData}
+        currentUser={currentUser.userName}
+        linkedUser={linkedUser?.userName}
       />
+
+      <TallyList data={data} userId={currentUser._id} setData={setData} />
     </div>
   );
 };

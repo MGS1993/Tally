@@ -1,6 +1,6 @@
 import HistoricalCard from "./HistoricalCard";
 import SortableContainer from "./SortableContainer";
-const HistoricalList = ({ data, user }) => {
+const HistoricalList = ({ data, currentUser }) => {
   let list = [];
 
   data?.forEach((item, index) => {
@@ -16,7 +16,7 @@ const HistoricalList = ({ data, user }) => {
         splitValue={item.splitValue}
         initialCost={item.initialCost}
         accentColor={
-          item.ownerName === user.userName ? "dodgerblue" : "#f95959"
+          item.ownerName === currentUser.userName ? "dodgerblue" : "#f95959"
         }
       />
     );

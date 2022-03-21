@@ -10,4 +10,16 @@ const mergeArray = (array1, array2, sortOrder) => {
   return mergedArray;
 };
 
-export { mergeArray };
+const retrieveLinkedUser = (currentUserId, usersObject) => {
+  let linkedProfile;
+  //always a set of two
+  if (!usersObject || usersObject.length !== 2) return;
+
+  usersObject.forEach((element) => {
+    if (element._id !== currentUserId) linkedProfile = element;
+  });
+
+  return linkedProfile;
+};
+
+export { mergeArray, retrieveLinkedUser };

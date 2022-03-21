@@ -9,6 +9,7 @@ import NavFooter from "./components/NavFooter";
 import useApi from "./hooks/useApi";
 import { getExpenses } from "./util/getExpenses";
 import getLinkedUsers from "./util/getUsers";
+import { retrieveLinkedUser } from "./util/arrayManipulation";
 
 const ReactRouter = () => {
   const [menuToggle, setMenuToggle] = useState(false);
@@ -17,6 +18,8 @@ const ReactRouter = () => {
   const { data, setData, request: getExpenseData } = useApi(getExpenses);
   const { data: linkedUsers, request: getUsers } = useApi(getLinkedUsers);
 
+  //Other user retrieved from linkedUsers object array
+  const linkedUser = retrieveLinkedUser(userContext.user._id, linkedUsers);
   useEffect(() => {
     getExpenseData(userContext?.user._id);
     getUsers(userContext?.user._id);
@@ -26,8 +29,21 @@ const ReactRouter = () => {
     <BrowserRouter>
       <Header />
       <Routes>
-        <Route path="/" element={<Home data={data} setData={setData} />} />
-        <Route path="/history" element={<History user={userContext?.user} />} />
+        <Route
+          path="/"
+          element={
+            <Home
+              data={data}
+              setData={setData}
+              currentUser={userContext?.user}
+              linkedUser={linkedUser}
+            />
+          }
+        />
+        <Route
+          path="/history"
+          element={<History currentUser={userContext?.user} />}
+        />
       </Routes>
       <NavFooter
         //Drill prop to Menu.js
