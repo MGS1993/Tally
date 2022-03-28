@@ -20,6 +20,7 @@ function App() {
       setUser(foundUser);
       getUsers(parsedUser._id);
     }
+    // eslint-disable-next-line
   }, []);
 
   return (
