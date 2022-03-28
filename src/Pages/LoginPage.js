@@ -7,7 +7,7 @@ import {
 } from "../components/styles/LoginPage.styled";
 import { InputWrapper, StyledInput } from "../components/styles/Menu.styled";
 import { FormSubmitBtn } from "../components/styles/Button.styled";
-import { login } from "../util/auth";
+import { login, demoLoginFunc } from "../util/auth";
 import AuthContext from "../auth/context";
 import loginSchema from "../Validations/LoginValidation";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -28,6 +28,17 @@ const LoginPage = () => {
 
   const loginFunction = async (formData) => {
     const { response, data } = await login(formData);
+    if (response.ok) {
+      localStorage.setItem("user", JSON.stringify(data));
+      authContext.setUser(data);
+    }
+
+    if (!response.ok) {
+      setFailedLogin(true);
+    }
+  };
+  const demoLogin = async () => {
+    const { response, data } = await demoLoginFunc();
     if (response.ok) {
       localStorage.setItem("user", JSON.stringify(data));
       authContext.setUser(data);
@@ -66,6 +77,7 @@ const LoginPage = () => {
           <ErrorAlert>{errors.password?.message}</ErrorAlert>
         </InputWrapper>
         <FormSubmitBtn type="submit">Log In</FormSubmitBtn>
+        <FormSubmitBtn onClick={() => demoLogin()}>Demo</FormSubmitBtn>
       </LoginForm>
     </LoginContainer>
   );
