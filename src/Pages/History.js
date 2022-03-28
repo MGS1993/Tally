@@ -19,7 +19,7 @@ const History = ({ currentUser, linkedUser }) => {
     getData();
     // eslint-disable-next-line
   }, []);
-
+  // console.log("hData:", hData);
   return (
     <StyledHistory>
       {chartData ? (
@@ -31,7 +31,11 @@ const History = ({ currentUser, linkedUser }) => {
       ) : null}
       {/* waits for animation to finish before serving HistoricalList */}
       {animationFinished ? (
-        <HistoricalList data={hData} currentUser={currentUser} />
+        <HistoricalList
+          data={hData}
+          currentUser={currentUser}
+          linkedUser={linkedUser}
+        />
       ) : null}
     </StyledHistory>
   );

@@ -15,7 +15,6 @@ import MobileAlert from "../components/styles/MobileAlert";
 import ErrorAlert from "../components/styles/ErrorAlert";
 
 //TODO animate login button on error
-//TODO add demo mode
 const LoginPage = () => {
   const [failedLogin, setFailedLogin] = useState(false);
   const authContext = useContext(AuthContext);
