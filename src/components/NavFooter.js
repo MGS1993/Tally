@@ -29,9 +29,11 @@ const NavFooter = ({ currentUser, linkedUsers, clicked, menuToggle }) => {
       return <Icon color={adaptiveColor} IconName={AdaptiveIcon} size={30} />;
     } else {
       return (
-        <Link to={location.pathname === "/history" ? "/" : "/history"}>
-          <Icon color={adaptiveColor} IconName={AdaptiveIcon} size={30} />
-        </Link>
+        <div>
+          <Link to={location.pathname === "/history" ? "/" : "/history"}>
+            <Icon color={adaptiveColor} IconName={AdaptiveIcon} size={30} />
+          </Link>
+        </div>
       );
     }
   };
@@ -48,16 +50,13 @@ const NavFooter = ({ currentUser, linkedUsers, clicked, menuToggle }) => {
       )}
       <StyledFooter>
         <Container>
-          <div>
-            <AdaptiveLink />
-          </div>
-          <div onClick={clicked}>
-            <Icon
-              IconName={GiHamburgerMenu}
-              size={30}
-              activeColor={menuToggle}
-            />
-          </div>
+          <AdaptiveLink />
+          <Icon
+            IconName={GiHamburgerMenu}
+            size={30}
+            activeColor={menuToggle}
+            clicked={clicked}
+          />
         </Container>
       </StyledFooter>
     </>
