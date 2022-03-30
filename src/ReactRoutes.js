@@ -6,6 +6,7 @@ import Header from "./components/Header";
 import Home from "./Pages/Home";
 import History from "./Pages/History";
 import NavFooter from "./components/NavFooter";
+import Scheduler from "./Pages/Scheduler";
 import useApi from "./hooks/useApi";
 import { getExpenses } from "./util/getExpenses";
 import getLinkedUsers from "./util/getUsers";
@@ -44,6 +45,15 @@ const ReactRouter = () => {
           path="/history"
           element={
             <History currentUser={userContext?.user} linkedUser={linkedUser} />
+          }
+        />
+        <Route
+          path="/scheduler"
+          element={
+            <Scheduler
+              currentUser={userContext?.user}
+              linkedUser={linkedUser}
+            />
           }
         />
       </Routes>

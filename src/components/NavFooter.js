@@ -1,6 +1,7 @@
 import React from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { BsFillBarChartLineFill } from "react-icons/bs";
+import { MdSchedule } from "react-icons/md";
 import { AiFillHome } from "react-icons/ai";
 import Icon from "./Icon";
 import Menu from "./Menu";
@@ -15,6 +16,7 @@ const NavFooter = ({
   setMenuToggle,
   setData,
 }) => {
+  //path location is used as a variable for AdaptiveLink
   const location = useLocation();
 
   const AdaptiveLink = () => {
