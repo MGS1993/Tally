@@ -55,13 +55,12 @@ const NavFooter = ({ currentUser, linkedUsers, clicked, menuToggle }) => {
         <Container>
           <AdaptiveLink />
           <div onClick={() => setSchedulerToggle(!schedulerToggle)}>
-            <Link to="/scheduler">
-              <Icon
-                IconName={MdSchedule}
-                size={30}
-                activeColor={schedulerToggle}
-              />
-            </Link>
+            <Icon
+              IconName={MdSchedule}
+              size={30}
+              activeColor={schedulerToggle}
+              LinkTo="/scheduler"
+            />
           </div>
 
           <Icon
