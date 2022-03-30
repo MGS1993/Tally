@@ -1,5 +1,7 @@
+import { StyledPage } from "../components/styles/Page.styled";
+
 const Scheduler = () => {
-  return <div></div>;
+  return <StyledPage></StyledPage>;
 };
 
 export default Scheduler;

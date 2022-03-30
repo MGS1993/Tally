@@ -27,6 +27,7 @@ const ReactRouter = () => {
     getUsers(userContext?.user._id);
     // eslint-disable-next-line
   }, []);
+  console.log("react router rendered...");
   return (
     <BrowserRouter>
       <Header />

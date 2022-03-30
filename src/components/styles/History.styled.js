@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-//replace this with a styled component. 'do not repeat yourself'
+// TODO add variables to StyledPage and remove this
 export const StyledHistory = styled.div`
   align-items: center;
   display: flex;
