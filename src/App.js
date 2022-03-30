@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import ReactRouter from "./ReactRoutes";
 import "./App.css";
 
-import AuthContext from "./auth/context";
+import AuthContext from "./contextApi/context";
 import LoginPage from "./Pages/LoginPage";
 import useApi from "./hooks/useApi";
 import getLinkedUsers from "./util/getUsers";

@@ -8,14 +8,7 @@ import Menu from "./Menu";
 import { Link } from "react-router-dom";
 import { Container, StyledFooter } from "./styles/NavFooter.styled";
 import { useLocation } from "react-router-dom";
-const NavFooter = ({
-  currentUser,
-  linkedUsers,
-  clicked,
-  menuToggle,
-  setMenuToggle,
-  setData,
-}) => {
+const NavFooter = ({ currentUser, linkedUsers, clicked, menuToggle }) => {
   //path location is used as a variable for AdaptiveLink
   const location = useLocation();
 
@@ -48,9 +41,6 @@ const NavFooter = ({
         <Menu
           currentUser={currentUser}
           linkedUsers={linkedUsers}
-          setData={setData}
-          menuToggle={menuToggle}
-          setMenuToggle={setMenuToggle}
           style={{ height: "100%", bottom: "0%" }}
         />
       ) : (

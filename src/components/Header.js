@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import AuthContext from "../auth/context";
+import AuthContext from "../contextApi/context";
 import { LogoutBtn } from "./styles/Button.styled";
 import { BiLogOut } from "react-icons/bi";
 

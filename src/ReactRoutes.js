@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useContext } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import AuthContext from "./auth/context";
+import AuthContext from "./contextApi/context";
+import MenuContext from "./contextApi/menuContext";
 import Header from "./components/Header";
 import Home from "./Pages/Home";
 import History from "./Pages/History";
@@ -57,15 +58,14 @@ const ReactRouter = () => {
           }
         />
       </Routes>
-      <NavFooter
-        //Drill prop to Menu.js
-        currentUser={userContext?.user}
-        linkedUsers={linkedUsers}
-        clicked={() => setMenuToggle(!menuToggle)}
-        menuToggle={menuToggle}
-        setMenuToggle={setMenuToggle}
-        setData={setData}
-      />
+      <MenuContext.Provider value={{ menuToggle, setMenuToggle, setData }}>
+        <NavFooter
+          currentUser={userContext?.user}
+          linkedUsers={linkedUsers}
+          clicked={() => setMenuToggle(!menuToggle)}
+          menuToggle={menuToggle}
+        />
+      </MenuContext.Provider>
     </BrowserRouter>
   );
 };

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import styles from "../cssModules/Menu.module.css";
 import { useForm } from "react-hook-form";
 
@@ -18,15 +18,9 @@ import ToggleToken from "./ToggleToken";
 import Slider from "@mui/material/Slider";
 import { FormSubmitBtn } from "./styles/Button.styled";
 import colors from "../util/colorArray";
+import MenuContext from "../contextApi/menuContext";
 
-const Menu = ({
-  currentUser,
-  linkedUsers,
-  setData,
-  setMenuToggle,
-  menuToggle,
-  style,
-}) => {
+const Menu = ({ currentUser, linkedUsers, style }) => {
   const [toggled, setToggled] = useState(false);
   const [calculatedExpense, setCalculatedExpense] = useState();
   const [initialCost, setInitialCost] = useState("");
@@ -44,6 +38,8 @@ const Menu = ({
     getValues,
     formState: { errors },
   } = useForm();
+
+  const { menuToggle, setMenuToggle, setData } = useContext(MenuContext);
 
   const changeOwner = () => {
     setDesignatedToggle(true);
