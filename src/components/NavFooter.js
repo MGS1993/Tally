@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { BsFillBarChartLineFill } from "react-icons/bs";
 import { MdSchedule } from "react-icons/md";
