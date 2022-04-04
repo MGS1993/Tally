@@ -5,19 +5,25 @@ import { MdSchedule } from "react-icons/md";
 import { AiFillHome } from "react-icons/ai";
 import Icon from "./Icon";
 import Menu from "./Menu";
-import { Link } from "react-router-dom";
 import { Container, StyledFooter } from "./styles/NavFooter.styled";
 import { useLocation } from "react-router-dom";
-const NavFooter = ({ currentUser, linkedUsers, clicked, menuToggle }) => {
+const NavFooter = ({
+  currentUser,
+  linkedUsers,
+  clicked,
+  menuToggle,
+  schedulerToggle,
+  setSchedulerToggle,
+}) => {
   //TODO check to see if it's better to use state rather than AdaptiveLink for color
   //path location is used as a variable for AdaptiveLink
-  //TODO see if you can incorporate Link inside Icon
+
   const location = useLocation();
-  const [schedulerToggle, setSchedulerToggle] = useState(false);
 
   const AdaptiveLink = () => {
     let AdaptiveIcon;
-    if (location.pathname === "/history") AdaptiveIcon = AiFillHome;
+    if (location.pathname === "/history" || location.pathname === "/scheduler")
+      AdaptiveIcon = AiFillHome;
     else AdaptiveIcon = BsFillBarChartLineFill;
 
     let adaptiveColor = () => {
@@ -32,11 +38,17 @@ const NavFooter = ({ currentUser, linkedUsers, clicked, menuToggle }) => {
       return <Icon color={adaptiveColor} IconName={AdaptiveIcon} size={30} />;
     } else {
       return (
-        <div>
-          <Link to={location.pathname === "/history" ? "/" : "/history"}>
-            <Icon color={adaptiveColor} IconName={AdaptiveIcon} size={30} />
-          </Link>
-        </div>
+        <Icon
+          color={adaptiveColor}
+          IconName={AdaptiveIcon}
+          size={30}
+          LinkTo={
+            location.pathname === "/history" ||
+            location.pathname === "/scheduler"
+              ? "/"
+              : "/history"
+          }
+        />
       );
     }
   };
@@ -58,7 +70,7 @@ const NavFooter = ({ currentUser, linkedUsers, clicked, menuToggle }) => {
             <Icon
               IconName={MdSchedule}
               size={30}
-              activeColor={schedulerToggle}
+              activeColor={location.pathname === "/scheduler"}
               LinkTo="/scheduler"
             />
           </div>

@@ -19,6 +19,7 @@ import Slider from "@mui/material/Slider";
 import { FormSubmitBtn } from "./styles/Button.styled";
 import colors from "../util/colorArray";
 import MenuContext from "../contextApi/menuContext";
+//TODO Fix bug where chart animation is interrupted if you bring the menu up too quick
 
 const Menu = ({ currentUser, linkedUsers, style }) => {
   const [toggled, setToggled] = useState(false);

@@ -21,14 +21,16 @@ const Icon = ({
     );
   } else {
     return (
-      <Link to={LinkTo}>
-        <StyledIconWrapper iconSize={size} tempColor onClick={clicked}>
-          <IconName
-            color={color || activeColor ? "#1976d2" : "black"}
-            size={size}
-          />
-        </StyledIconWrapper>
-      </Link>
+      <div>
+        <Link to={LinkTo}>
+          <StyledIconWrapper iconSize={size} tempColor onClick={clicked}>
+            <IconName
+              color={color || activeColor ? "#1976d2" : "black"}
+              size={size}
+            />
+          </StyledIconWrapper>
+        </Link>
+      </div>
     );
   }
 };

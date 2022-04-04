@@ -15,6 +15,7 @@ import { retrieveLinkedUser } from "./util/arrayManipulation";
 
 const ReactRouter = () => {
   const [menuToggle, setMenuToggle] = useState(false);
+  const [schedulerToggle, setSchedulerToggle] = useState(false);
   const userContext = useContext(AuthContext);
 
   const { data, setData, request: getExpenseData } = useApi(getExpenses);
@@ -65,6 +66,8 @@ const ReactRouter = () => {
           linkedUsers={linkedUsers}
           clicked={() => setMenuToggle(!menuToggle)}
           menuToggle={menuToggle}
+          schedulerToggle={schedulerToggle}
+          setSchedulerToggle={setSchedulerToggle}
         />
       </MenuContext.Provider>
     </BrowserRouter>

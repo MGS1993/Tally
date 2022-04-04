@@ -2,7 +2,7 @@ import HistoricalCard from "./HistoricalCard";
 import SortableContainer from "./SortableContainer";
 const HistoricalList = ({ data, currentUser, linkedUser }) => {
   let list = [];
-
+  //TODO add delete button
   data?.forEach((item, index) => {
     //accentColor compares logged in user vs expense owner
     if (item.owner === currentUser._id || item.owner === linkedUser._id)
