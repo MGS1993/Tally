@@ -66,9 +66,9 @@ const ExpenseCard = ({
           )}
         </TitleDivWrapper>
 
-        <SummaryDiv>
-          {description?.length > 1 ? description : "No description provided"}
-        </SummaryDiv>
+        {description?.length > 1 ? (
+          <SummaryDiv>{description}</SummaryDiv>
+        ) : null}
         <MiscInfo>
           <MiscItem>
             <div>Date</div>

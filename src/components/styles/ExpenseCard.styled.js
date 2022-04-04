@@ -8,7 +8,7 @@ export const ExpenseWrapper = styled.div`
   flex: 0 0 100px;
   margin: 10px 0px;
   padding: 12px 2px;
-  width: 85vw;
+  width: 94vw;
 `;
 
 //Left Card /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
