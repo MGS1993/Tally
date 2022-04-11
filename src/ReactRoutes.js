@@ -7,7 +7,7 @@ import Header from "./components/Header";
 import Home from "./Pages/Home";
 import History from "./Pages/History";
 import NavFooter from "./components/NavFooter";
-import Scheduler from "./Pages/Scheduler";
+// import Scheduler from "./Pages/Scheduler";
 import useApi from "./hooks/useApi";
 import { getExpenses } from "./util/getExpenses";
 import getLinkedUsers from "./util/getUsers";
@@ -15,7 +15,7 @@ import { retrieveLinkedUser } from "./util/arrayManipulation";
 
 const ReactRouter = () => {
   const [menuToggle, setMenuToggle] = useState(false);
-  const [schedulerToggle, setSchedulerToggle] = useState(false);
+  // const [schedulerToggle, setSchedulerToggle] = useState(false);
   const userContext = useContext(AuthContext);
 
   const { data, setData, request: getExpenseData } = useApi(getExpenses);
@@ -50,7 +50,7 @@ const ReactRouter = () => {
             <History currentUser={userContext?.user} linkedUser={linkedUser} />
           }
         />
-        <Route
+        {/* <Route
           path="/scheduler"
           element={
             <Scheduler
@@ -58,7 +58,7 @@ const ReactRouter = () => {
               linkedUser={linkedUser}
             />
           }
-        />
+        /> */}
       </Routes>
       <MenuContext.Provider value={{ menuToggle, setMenuToggle, setData }}>
         <NavFooter
@@ -66,8 +66,8 @@ const ReactRouter = () => {
           linkedUsers={linkedUsers}
           clicked={() => setMenuToggle(!menuToggle)}
           menuToggle={menuToggle}
-          schedulerToggle={schedulerToggle}
-          setSchedulerToggle={setSchedulerToggle}
+          // schedulerToggle={schedulerToggle}
+          // setSchedulerToggle={setSchedulerToggle}
         />
       </MenuContext.Provider>
     </BrowserRouter>

@@ -8,6 +8,7 @@ export const StyledDisplay = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: 10px;
+  padding: 10px;
   width: 97vw;
 `;
 
@@ -27,8 +28,8 @@ export const Wrapper = styled.div`
 `;
 
 export const ExpenseCard = styled(TitleCard)`
-  color: ${({ deficit }) => (deficit ? "#b82500" : "green")};
+  color: ${({ deficit }) => (deficit ? "#b82500" : "#fff")};
   font-size: 26px;
   font-weight: bold;
-  margin: 20px;
+  margin: 10px 20px 10px 20px;
 `;
