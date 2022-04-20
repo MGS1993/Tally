@@ -23,13 +23,13 @@ const Home = ({ data, setData, currentUser, linkedUser }) => {
   );
 };
 
-const mainWrapper = {
-  // alignItems: "center",
-  display: "flex",
-  flexDirection: "column",
-  flex: "1",
-  // overflow: "scroll",
-  // position: "relative",
-};
+// const mainWrapper = {
+//   // alignItems: "center",
+//   display: "flex",
+//   flexDirection: "column",
+//   flex: "1",
+//   // overflow: "scroll",
+//   // position: "relative",
+// };
 
 export default Home;
