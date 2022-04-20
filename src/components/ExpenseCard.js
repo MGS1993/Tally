@@ -44,7 +44,6 @@ const ExpenseCard = ({
       </CardLeft>
       <Divider />
       <CardRight>
-        {/* <div> */}
         <TitleDivWrapper
           colorAccent={colorAccent}
           toggle={isButtonToggled ? 1 : 0}
@@ -66,11 +65,11 @@ const ExpenseCard = ({
             </>
           )}
         </TitleDivWrapper>
-        {/* </div> */}
         {description?.length > 1 ? (
           <SummaryDiv>{description}</SummaryDiv>
         ) : null}
-        <MiscInfo>
+        {/* checks if description is populated and if not adds margin */}
+        <MiscInfo descPopulateChecker={description}>
           <MiscItem>
             <div>Date</div>
             <div>{formatDate(date)}</div>

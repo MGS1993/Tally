@@ -59,7 +59,6 @@ export const TitleDivWrapper = styled.div`
   justify-content: center;
   position: relative;
   text-align: center;
-  /* width: 80%; */
   margin: 0 8px;
 `;
 
@@ -121,6 +120,8 @@ export const MiscInfo = styled.div`
   display: flex;
   flex-basis: 40%;
   justify-content: space-evenly;
+  margin-top: ${({ descPopulateChecker }) =>
+    descPopulateChecker?.length > 1 ? "0px" : "5px"};
 
   & > div {
     align-items: center;
@@ -133,7 +134,7 @@ export const MiscInfo = styled.div`
 export const SummaryDiv = styled.div`
   color: #6e6e6e;
   flex-basis: 60%;
-  min-height: 65px;
-  padding: 8px 4px;
+  margin: 0 8px;
+  padding: 8px 0px;
   overflow: scroll;
 `;
