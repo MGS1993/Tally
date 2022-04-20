@@ -5,5 +5,5 @@ export const Divider = styled.div`
   border-left: 1px solid grey;
   display: flex;
   height: 90%;
-  width: 8px;
+  /* width: 8px; */
 `;

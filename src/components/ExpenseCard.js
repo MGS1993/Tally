@@ -44,6 +44,7 @@ const ExpenseCard = ({
       </CardLeft>
       <Divider />
       <CardRight>
+        {/* <div> */}
         <TitleDivWrapper
           colorAccent={colorAccent}
           toggle={isButtonToggled ? 1 : 0}
@@ -65,7 +66,7 @@ const ExpenseCard = ({
             </>
           )}
         </TitleDivWrapper>
-
+        {/* </div> */}
         {description?.length > 1 ? (
           <SummaryDiv>{description}</SummaryDiv>
         ) : null}

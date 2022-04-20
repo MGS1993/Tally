@@ -8,7 +8,7 @@ export const ExpenseWrapper = styled.div`
   flex: 0 0 100px;
   margin: 10px 0px;
   padding: 12px 2px;
-  width: 94vw;
+  width: 88vw;
 `;
 
 //Left Card /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
@@ -59,6 +59,8 @@ export const TitleDivWrapper = styled.div`
   justify-content: center;
   position: relative;
   text-align: center;
+  /* width: 80%; */
+  margin: 0 8px;
 `;
 
 export const Title = styled.div`
