@@ -149,7 +149,6 @@ const Menu = ({ currentUser, linkedUsers, style }) => {
         </>
 
         <FormItem className={styles.titleWrapper}>
-          {/* <TitleDiv>Title</TitleDiv> */}
           <StyledInput
             type="text"
             id="title-input"
@@ -159,7 +158,6 @@ const Menu = ({ currentUser, linkedUsers, style }) => {
           />
         </FormItem>
         <FormItem className={styles.dateWrapper}>
-          {/* <TitleDiv>Date</TitleDiv> */}
           <StyledInput
             type={inputType}
             id="date-picker"

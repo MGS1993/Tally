@@ -9,7 +9,7 @@ import { InputWrapper, StyledInput } from "../components/styles/Menu.styled";
 import { FormSubmitBtn } from "../components/styles/Button.styled";
 import { login, demoLoginFunc } from "../util/auth";
 import AuthContext from "../contextApi/context";
-import loginSchema from "../Validations/LoginValidation";
+import { loginSchema } from "../Validations/Validations";
 import { yupResolver } from "@hookform/resolvers/yup";
 import MobileAlert from "../components/styles/MobileAlert";
 import ErrorAlert from "../components/styles/ErrorAlert";
