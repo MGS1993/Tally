@@ -5,7 +5,7 @@ import { deleteExpense } from "../util/deleteExpense";
 import { getExpenses } from "../util/getExpenses";
 import ExpenseCard from "./ExpenseCard";
 import { v4 as uuidv4 } from "uuid";
-import { ListWrapper, List } from "./styles/TallyList.styled";
+import { List } from "./styles/TallyList.styled";
 
 const TallyList = ({ data, userId, setData }) => {
   let list = [];

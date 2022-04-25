@@ -4,8 +4,6 @@ export const StyledButton = styled(Button)`
   align-self: center;
   color: white;
   font-weight: bold;
-  /* padding: 0px; */
-  /* width: 90%; */
 `;
 
 export const FormSubmitBtn = styled(StyledButton)`
@@ -15,7 +13,7 @@ export const FormSubmitBtn = styled(StyledButton)`
 
 export const LogoutBtn = styled(StyledButton)`
   height: 35px;
-  left: 0;
+  left: 0px;
   position: absolute;
 
   & > :first-child {

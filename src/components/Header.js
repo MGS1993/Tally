@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import AuthContext from "../contextApi/context";
 import { LogoutBtn } from "./styles/Button.styled";
 import { BiLogOut } from "react-icons/bi";
+import StyledHeader from "./styles/Header.styled";
 
 const Header = () => {
   const authContext = useContext(AuthContext);
@@ -11,24 +12,13 @@ const Header = () => {
   };
 
   return (
-    <div style={mainWrapper}>
+    <StyledHeader>
       <LogoutBtn onClick={() => logout()}>
         <BiLogOut color="white" />
       </LogoutBtn>
       <h1>Tally</h1>
-    </div>
+    </StyledHeader>
   );
-};
-
-const mainWrapper = {
-  alignItems: "center",
-  backgroundColor: "dodgerblue",
-  color: "white",
-  display: "flex",
-  height: "6%",
-  justifyContent: "center",
-  minHeight: "38px",
-  position: "relative",
 };
 
 export default Header;
