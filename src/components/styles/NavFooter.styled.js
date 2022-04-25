@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const StyledFooter = styled.footer`
   bottom: 0px;
   display: flex;
-  height: 6%;
+  height: 6vh;
   min-height: 30px;
   position: absolute;
   z-index: 4;

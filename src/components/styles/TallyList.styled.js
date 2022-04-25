@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const List = styled.div`
   display: flex;
   flex-direction: column;
-  max-height: 65vh;
+  max-height: 75vh;
   overflow: scroll;
-  margin-top: 20px;
+  padding-bottom: 7vh;
 `;
