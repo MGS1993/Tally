@@ -7,5 +7,5 @@ export const StyledPage = styled.div`
   justify-content: ${({ justifyContent }) => justifyContent};
   flex-direction: ${({ direction }) => direction};
   position: relative;
-  overflow: scroll;
+  /* overflow: scroll; */
 `;

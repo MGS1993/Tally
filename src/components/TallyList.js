@@ -5,6 +5,7 @@ import { deleteExpense } from "../util/deleteExpense";
 import { getExpenses } from "../util/getExpenses";
 import ExpenseCard from "./ExpenseCard";
 import { v4 as uuidv4 } from "uuid";
+import { ListWrapper, List } from "./styles/TallyList.styled";
 
 const TallyList = ({ data, userId, setData }) => {
   let list = [];
@@ -37,25 +38,7 @@ const TallyList = ({ data, userId, setData }) => {
     );
   });
 
-  return (
-    <div style={listWrapper}>
-      <div style={listStyle}>{list}</div>
-    </div>
-  );
-};
-
-const listWrapper = {
-  alignItems: "center",
-  paddingTop: "20px",
-  // maxHeight: "100vh",
-};
-
-const listStyle = {
-  alignItems: "center",
-  display: "flex",
-  flexDirection: "column",
-  maxHeight: "65vh",
-  overflow: "scroll",
+  return <List>{list}</List>;
 };
 
 export default TallyList;

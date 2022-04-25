@@ -9,7 +9,7 @@ const Home = ({ data, setData, currentUser, linkedUser }) => {
   // console.log(currentUser);
   // console.log(linkedUser);
   return (
-    <StyledPage align="center" justifyContent="center" direction="column">
+    <StyledPage align="center" direction="column">
       <TallyDisplay
         data={data}
         currentUser={currentUser.userName}
