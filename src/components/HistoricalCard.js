@@ -3,6 +3,7 @@ import {
   StyledCard,
   MinimizedContainer,
   ExpandableContainer,
+  ExpandBtn,
 } from "./styles/HistoricalCard.styled";
 import { format, parseISO } from "date-fns";
 import Icon from "./Icon";
@@ -29,9 +30,9 @@ const HistoricalCard = ({
         <div> {title}</div>
         <div>TotalExpense: {initialCost} </div>
       </ExpandableContainer>
-      <div onClick={() => setExpanded(!expanded)}>
+      <ExpandBtn expanded={expanded} onClick={() => setExpanded(!expanded)}>
         <Icon IconName={BsChevronCompactDown} />
-      </div>
+      </ExpandBtn>
     </StyledCard>
   );
 };

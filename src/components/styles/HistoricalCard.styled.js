@@ -27,3 +27,10 @@ export const ExpandableContainer = styled(MinimizedContainer)`
   padding: ${({ expanded }) => (expanded ? "20px 20px 10px 20px" : "0px")};
   transition: all 0.3s ease;
 `;
+
+export const ExpandBtn = styled.div`
+  padding: 5px 25px;
+  transition: all 0.3s ease;
+  transform: ${({ expanded }) =>
+    expanded ? "rotate(180deg)" : "rotate(0deg)"};
+`;
