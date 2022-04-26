@@ -9,6 +9,10 @@ export const StyledButton = styled(Button)`
 export const FormSubmitBtn = styled(StyledButton)`
   padding: 10px;
   width: 90%;
+
+  @media (min-width: 765px) {
+    width: 30%;
+  }
 `;
 
 export const LogoutBtn = styled(StyledButton)`

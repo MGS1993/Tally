@@ -17,26 +17,18 @@ export const CardLeft = styled.div`
   display: flex;
   flex-basis: 30%;
   flex-direction: column;
+  justify-content: center;
   position: relative;
 `;
 
 export const ExpenseAmount = styled.div`
-  align-items: center;
-  display: flex;
-  flex: 1;
-  justify-content: center;
-
-  & > p {
-    color: green;
-    font-size: 1.6rem;
-  }
+  color: green;
+  font-size: 1.6rem;
 `;
 
 export const UserNameText = styled.div`
   color: #808080;
-  text-align: center;
   text-transform: capitalize;
-  position: absolute;
 `;
 
 //Right Card /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
@@ -60,6 +52,10 @@ export const TitleDivWrapper = styled.div`
   position: relative;
   text-align: center;
   margin: 0 8px;
+
+  @media (min-width: 768px) {
+    margin: 0 15%;
+  }
 `;
 
 export const Title = styled.div`

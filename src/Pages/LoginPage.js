@@ -53,7 +53,7 @@ const LoginPage = () => {
         <h1>Tally</h1>
       </Title>
       <MobileAlert>
-        <p>Hello! This website is best used on mobile</p>
+        <p>Hello! This website is best views on a mobile device</p>
       </MobileAlert>
       {failedLogin ? <ErrorAlert>Invalid login</ErrorAlert> : null}
       <LoginForm onSubmit={handleSubmit(loginFunction)}>
