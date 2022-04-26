@@ -8,7 +8,7 @@ export const ExpenseWrapper = styled.div`
   flex: 0 0 100px;
   margin: 10px 0px;
   padding: 12px 2px;
-  width: 88vw;
+  /* width: 88vw; */
 `;
 
 //Left Card /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
@@ -137,4 +137,11 @@ export const SummaryDiv = styled.div`
   margin: 0 8px;
   padding: 8px 0px;
   overflow: scroll;
+
+  @media (min-width: 768px) {
+    scrollbar-width: none; // firefox
+    ::-webkit-scrollbar {
+      display: none; /* Safari and Chrome */
+    }
+  }
 `;

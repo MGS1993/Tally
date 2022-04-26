@@ -9,7 +9,11 @@ export const StyledDisplay = styled.div`
   flex-direction: column;
   margin-top: 10px;
   padding: 10px;
-  width: 97vw;
+  width: 97%;
+
+  @media (min-width: 768px) {
+    width: 40%;
+  }
 `;
 
 export const TitleCard = styled.div`

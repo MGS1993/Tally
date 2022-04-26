@@ -9,7 +9,11 @@ export const StyledCard = styled.div`
   justify-content: center;
   flex-direction: column;
   margin: 10px 0px;
-  width: 85vw;
+  width: 85%;
+
+  @media (min-width: 768px) {
+    width: 50%;
+  }
 `;
 
 export const MinimizedContainer = styled.div`

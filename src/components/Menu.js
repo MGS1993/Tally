@@ -1,5 +1,4 @@
 import React, { useState, useContext } from "react";
-import styles from "../cssModules/Menu.module.css";
 import { useForm } from "react-hook-form";
 
 import { addExpense } from "../util/addExpense";
@@ -148,7 +147,7 @@ const Menu = ({ currentUser, linkedUsers, style }) => {
           </FormItem>
         </>
 
-        <FormItem className={styles.titleWrapper}>
+        <FormItem>
           <StyledInput
             type="text"
             id="title-input"
@@ -157,7 +156,7 @@ const Menu = ({ currentUser, linkedUsers, style }) => {
             {...register("title")}
           />
         </FormItem>
-        <FormItem className={styles.dateWrapper}>
+        <FormItem>
           <StyledInput
             type={inputType}
             id="date-picker"

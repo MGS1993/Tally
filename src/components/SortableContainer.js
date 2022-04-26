@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { FlexRow } from "./styles/Flex";
 import ToggleToken from "./ToggleToken";
+import { ToggleWrapper } from "./styles/Flex";
 
 const SortableContainer = ({ list }) => {
   //accepts react elements, NOT regular arrays
@@ -48,8 +48,8 @@ const SortableContainer = ({ list }) => {
     setExpenseToggle(false);
   };
   return (
-    <div>
-      <FlexRow justifyContent="space-around">
+    <>
+      <ToggleWrapper justifyContent="space-around" width="90%">
         <ToggleToken
           name={
             !dateToggle
@@ -76,10 +76,10 @@ const SortableContainer = ({ list }) => {
             expenseLowToHigh ? () => sortLowToHigh() : () => sortHighToLow()
           }
         />
-      </FlexRow>
+      </ToggleWrapper>
 
       {historicalList}
-    </div>
+    </>
   );
 };
 

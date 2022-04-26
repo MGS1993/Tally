@@ -7,17 +7,34 @@ export const StyledMenu = styled.div`
   flex-direction: column;
   height: 0vh;
   justify-content: center;
+  padding: 10px;
   position: fixed;
   transition: 0.5s ease-in-out;
   width: 100%;
   z-index: 4;
+
+  @media (min-width: 768px) {
+    background-color: transparent;
+    border-radius: 15px;
+    left: 0;
+    margin: 0 auto;
+    right: 0;
+    width: 60%;
+  }
 `;
 
 export const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
   font-family: "Roboto";
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
+
+  @media (min-width: 768px) {
+    align-items: center;
+    background-color: #fff;
+    height: 80%;
+    justify-content: center;
+  }
 `;
 export const FormItem = styled.div`
   display: flex;
@@ -32,6 +49,10 @@ export const FormItem = styled.div`
     font-size: 18px;
     padding: 8px 12px;
   }
+
+  @media (min-width: 768px) {
+    width: 75%;
+  }
 `;
 
 export const StyledInput = styled.input`
@@ -40,7 +61,17 @@ export const StyledInput = styled.input`
   color: #38334ccc;
   font-size: 26px;
   padding: 8px 12px;
-  width: inherit;
+  /* width: inherit; */
+
+  ::placeholder {
+    font-family: "Roboto", sans-serif;
+  }
+
+  @media (min-width: 768px) {
+    &::placeholder {
+      text-align: center;
+    }
+  }
 `;
 
 export const InputMod = styled.div`

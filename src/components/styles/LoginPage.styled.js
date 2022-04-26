@@ -12,13 +12,12 @@ export const Title = styled.div`
   width: 200px;
   margin: 0 auto;
   text-align: center;
-  top: 10vh;
+  top: 10%;
 `;
 
 export const LoginContainer = styled.div`
   align-items: center;
   display: flex;
-  background: rgb(165, 112, 215);
   background: linear-gradient(
     58deg,
     rgba(165, 112, 215, 1) 0%,
@@ -33,7 +32,7 @@ export const LoginContainer = styled.div`
 export const LoginForm = styled.form`
   display: flex;
   flex-direction: column;
-  width: 80vw;
+  width: 80%;
 
   div {
     margin: 10px 0px;
@@ -47,5 +46,9 @@ export const LoginForm = styled.form`
   button {
     font-size: 18px;
     margin-top: 10px;
+  }
+
+  @media (min-width: 768px) {
+    width: 40%;
   }
 `;

@@ -7,6 +7,15 @@ export const StyledFooter = styled.footer`
   min-height: 30px;
   position: absolute;
   z-index: 4;
+  width: 100%;
+
+  @media (min-width: 768px) {
+    justify-content: center;
+    width: 75%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+  }
 `;
 
 export const Container = styled.div`
@@ -15,8 +24,7 @@ export const Container = styled.div`
   box-shadow: 0 -1px 4px rgb(0 0 0 / 12%), 0 1px 2px;
   display: flex;
   justify-content: space-between;
-  height: 100%;
-  width: 100vw;
+  width: inherit;
 
   & > div {
     margin: 0 15px;
