@@ -14,7 +14,6 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import MobileAlert from "../components/styles/MobileAlert";
 import ErrorAlert from "../components/styles/ErrorAlert";
 
-//TODO animate login button on error
 const LoginPage = () => {
   const [failedLogin, setFailedLogin] = useState(false);
   const authContext = useContext(AuthContext);

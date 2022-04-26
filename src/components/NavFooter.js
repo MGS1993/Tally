@@ -8,7 +8,6 @@ import Menu from "./Menu";
 import { Container, StyledFooter } from "./styles/NavFooter.styled";
 import { useLocation } from "react-router-dom";
 const NavFooter = ({ currentUser, linkedUsers, clicked, menuToggle }) => {
-  //TODO check to see if it's better to use state rather than AdaptiveLink for color
   //path location is used as a variable for AdaptiveLink
 
   const location = useLocation();

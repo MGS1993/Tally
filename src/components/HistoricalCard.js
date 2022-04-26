@@ -23,7 +23,7 @@ const HistoricalCard = ({
     <StyledCard borderColor={accentColor}>
       <MinimizedContainer>
         <div>{ownerName}</div>
-        <div>{cost}</div>
+        <div>${cost}</div>
         <div>{format(parseISO(date), "MM-d-yy")}</div>
       </MinimizedContainer>
       <ExpandableContainer expanded={expanded}>
